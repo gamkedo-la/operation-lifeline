@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player");
         }
 
-        if (followTarget)
+        if (target && followTarget)
         {
             targetPosition = new Vector3(transform.position.x, target.transform.position.y, transform.position.z);
 
