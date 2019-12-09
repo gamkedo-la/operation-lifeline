@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 2.27, y: 2.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &58775019514408522
@@ -111,7 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e904dfdb9022793418207ca03911058a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageOnImpact: 35
+  damageOverTime: 0
+  destroyedOnImpact: 1
   particle: {fileID: 1839428532327440, guid: 8828e0a00da54654eb0d1938be51c083, type: 3}
+  damageTimer: 0
 --- !u!1 &8506571295219657387
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fee274bcceab49f44ab67a19863d2a15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
