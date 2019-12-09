@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
         followTarget = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(target == null)
         {

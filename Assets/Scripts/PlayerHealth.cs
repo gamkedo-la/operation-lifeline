@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	[SerializeField] private Light pointLight;
 	[SerializeField] private Light[] headLights;
 	[Range(1,100)] private int health = 100;
+	[Range(0, 100)] [SerializeField] private int maxRengeration = 75;
 	public float regenPerSec = 5f;
 	public bool regenerating = true;
 	float lightIntensity = 0;
@@ -36,7 +37,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 	public void Update()
 	{
-		if (health<100 && regenerating &&!isDead) { Regenerate(); }
+		if (health<maxRengeration && regenerating && !isDead) { Regenerate(); }
 	}
 
 	public void AdjustHealth(int adjustment)
@@ -49,8 +50,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	{
 		regen += regenPerSec * Time.deltaTime;
 		if (regen >= 1f) 
-		{ 
-			health = health + 1; 
+		{
+			AdjustHealth(1);
 			regen = regen - 1f; 
 		}
 	}
