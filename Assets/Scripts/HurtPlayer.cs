@@ -11,12 +11,22 @@ public class HurtPlayer : MonoBehaviour
 	public GameObject particle;
 	public float accumulatedDamage = 0f;
 
-	void OnTriggerEnter2D(Collider2D other)
+    private GameObject player;
+    private PlayerShake playerShakeScript;
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+        playerShakeScript = player.GetComponent<PlayerShake>();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
     {
 		if (damageOnImpact > 0)
 		{
 			InflictDamage(other, damageOnImpact);
 			Explode();
+            playerShakeScript.ShakeMe();
 		}
 		if (destroyedOnImpact) { SelfDestruct(); }
 	}
