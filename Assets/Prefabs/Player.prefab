@@ -1723,8 +1723,6 @@ GameObject:
   - component: {fileID: 4825722244958484895}
   - component: {fileID: 4825722244958484892}
   - component: {fileID: 4825722244958484881}
-  - component: {fileID: 3067926702452503036}
-  - component: {fileID: 21394276293648354}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1827,9 +1825,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 50
-  leftPlayerTorque: -1
+  player1Torque: -80000
   player2Torque: 80000
-  playerEffects: {fileID: 3067926702452503036}
+  player1Thruster: {fileID: 4825722243523987144}
+  player2Thruster: {fileID: 4825722245381946548}
+  thrusterSFX: {fileID: 4825722243818142944}
+  thrusterVolume: 50
 --- !u!114 &4825722244958484881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1846,41 +1847,11 @@ MonoBehaviour:
   headLights:
   - {fileID: 4825722243625711127}
   - {fileID: 4825722245135229146}
-  maxRengeration: 100
+  maxRengeration: 80
   regenPerSec: 1
   regenerating: 1
   particle: {fileID: 1839428532327440, guid: 8828e0a00da54654eb0d1938be51c083, type: 3}
   lifeLine: {fileID: 4825722243677165232}
---- !u!114 &3067926702452503036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4825722244958484882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860f36c07fb9b9e4f943814c2ebf88b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftPlayerThruster: {fileID: 4825722243523987144}
-  rightPlayerThruster: {fileID: 4825722245381946548}
-  playerSounds: {fileID: 21394276293648354}
---- !u!114 &21394276293648354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4825722244958484882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f4d73fb40334c04db8490e7cc0f3367, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrusterAudioSource: {fileID: 4825722243818142944}
-  thrusterSound: {fileID: 0}
-  thrusterVolume: 50
 --- !u!1 &4825722244995132039
 GameObject:
   m_ObjectHideFlags: 0
