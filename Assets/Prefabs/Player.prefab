@@ -1827,8 +1827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 50
-  leftPlayerTorque: -80000
-  rightPlayerTorque: 80000
+  leftPlayerTorque: -1
+  player2Torque: 80000
   playerEffects: {fileID: 3067926702452503036}
 --- !u!114 &4825722244958484881
 MonoBehaviour:
