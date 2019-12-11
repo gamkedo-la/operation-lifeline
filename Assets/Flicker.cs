@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Flicker : MonoBehaviour
 {
-	float flickerVariance = .05f;
-	Vector3 basePosition = Vector3.zero;
-	Vector3 displacedPosition = Vector3.zero;
+	public float flickerVariance = .05f;
+	private Vector3 basePosition = Vector3.zero;
+	private Vector3 displacedPosition = Vector3.zero;
 
 	private void Start()
 	{

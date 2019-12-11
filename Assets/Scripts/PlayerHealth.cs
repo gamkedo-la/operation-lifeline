@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	public GameObject particle;
 	public Transform lifeLine;
 	private MeshRenderer lifeLineMesh;
+	private Flicker flicker0;
+	private Flicker flicker1;
 	float lifeLineLength;
 	Color lifeLineColor;
 	bool isDead = false;
@@ -32,6 +34,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		{
 			lightColor = pointLight.color;
 			lightIntensity = pointLight.intensity;
+		}
+		if (headLights[0]) {
+			flicker0 = headLights[0].GetComponent<Flicker>();
+		}
+		if (headLights[1]) {
+			flicker1 = headLights[1].GetComponent<Flicker>();
 		}
 	}
 
@@ -89,6 +97,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 			{
 				if (headLights[0]) { headLights[0].enabled = true; }
 				if (headLights[1]) { headLights[1].enabled = true; }
+				if (health>45)
+				{
+					if (flicker0) { flicker0.flickerVariance = 0.3f; }
+					if (flicker1) { flicker1.flickerVariance = 0.3f; }
+				}
+				else 
+				{ 
+					if (flicker0) { flicker0.flickerVariance = 0.06f; }
+					if (flicker1) { flicker1.flickerVariance = 0.06f; }
+				}
 			}
 			else
 			{
