@@ -13,9 +13,9 @@ public class PlayerEffects : MonoBehaviour
 	{
 		if (leftPlayerThruster) { leftPlayerThruster.enabled = leftPlayerThrusting; }
 		if (rightPlayerThruster) { rightPlayerThruster.enabled = rightPlayerThrusting; }
-		float engineBurn = 0f;
-		if (leftPlayerThrusting) { engineBurn = engineBurn + 0.5f; }
-		if (rightPlayerThrusting) { engineBurn = engineBurn + 0.5f; }
+		float engineBurn = 0.06f;
+		if (leftPlayerThrusting) { engineBurn = engineBurn + 0.47f; }
+		if (rightPlayerThrusting) { engineBurn = engineBurn + 0.47f; }
 		if (playerSounds)
 		{
 			playerSounds.SetVolume(engineBurn / 100);
