@@ -1,0 +1,52 @@
+{
+    "name": "AstroLanceInput",
+    "maps": [
+        {
+            "name": "AstroLance",
+            "id": "1d575525-4401-4d16-98db-c0d7fc36ce3c",
+            "actions": [
+                {
+                    "name": "LeftEngine",
+                    "type": "Button",
+                    "id": "e8bc622a-86f4-46ae-b5c9-dd2359e314f7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightEngine",
+                    "type": "Button",
+                    "id": "e600b77b-3f44-4e98-bcb0-d9a35c4ffb27",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c2554bab-3504-4970-af50-c0a10a35c726",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftEngine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bdbcddf6-332d-44cb-ac17-e122fb5c14b7",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightEngine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
