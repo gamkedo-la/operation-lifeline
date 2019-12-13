@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976a6ab70056a734a968052cacd736a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flickerVariance: 0.05
 --- !u!1 &4760620068798655784
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976a6ab70056a734a968052cacd736a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flickerVariance: 0.05
 --- !u!1 &4825722243388223205
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976a6ab70056a734a968052cacd736a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flickerVariance: 0.05
 --- !u!1 &4825722243533109389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976a6ab70056a734a968052cacd736a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flickerVariance: 0.05
 --- !u!1 &4825722243677165235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,6 +2319,7 @@ GameObject:
   - component: {fileID: 4825722244958484881}
   - component: {fileID: 3067926702452503036}
   - component: {fileID: 21394276293648354}
+  - component: {fileID: 1000227997543053506}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2472,6 +2477,18 @@ MonoBehaviour:
   thrusterAudioSource: {fileID: 4825722243818142944}
   thrusterSound: {fileID: 0}
   thrusterVolume: 50
+--- !u!114 &1000227997543053506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825722244958484882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd36920e5ba64784fbf7ec190424a823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4825722244995132039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,6 +2840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976a6ab70056a734a968052cacd736a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flickerVariance: 0.05
 --- !u!1 &4825722245434065551
 GameObject:
   m_ObjectHideFlags: 0
