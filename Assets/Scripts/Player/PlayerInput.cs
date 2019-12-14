@@ -20,6 +20,7 @@ public static class PlayerInput
         if (Input.GetKey(rightThrustButton)
             
             // alternate keys allowed, so it "just works" as players guess it should
+            || Input.GetKey(KeyCode.RightArrow)
             || Input.GetKey(KeyCode.RightControl) // some macs do not have one?!
             || Input.GetKey(KeyCode.Return) // for symmetry w capslock
             // just for fun, the entire keyboard split in two
@@ -39,6 +40,7 @@ public static class PlayerInput
 		if (Input.GetKey(leftThrustButton)
 
             // alternate keys allowed, so it "just works" as players guess it should
+            || Input.GetKey(KeyCode.LeftArrow)
             || Input.GetKey(KeyCode.LeftShift) // for symmetry w left
             || Input.GetKey(KeyCode.CapsLock) // for symmetry w return
             // just for fun, the entire keyboard split in two
