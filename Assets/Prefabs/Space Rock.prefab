@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 212171181051715768}
   - component: {fileID: 58775019514408522}
   - component: {fileID: 114965186369722504}
+  - component: {fileID: 6400504974015770166}
   m_Layer: 0
-  m_Name: Meteorite
+  m_Name: Space Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,6 +117,22 @@ MonoBehaviour:
   destroyedOnImpact: 1
   particle: {fileID: 1839428532327440, guid: 8828e0a00da54654eb0d1938be51c083, type: 3}
   accumulatedDamage: 0
+--- !u!114 &6400504974015770166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672830931894912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4be00ad24aa284cbcb84fdf82aaf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotating: 1
+  weightedToward0: 1
+  minRrotationSpeed: -0.2
+  maxRrotationSpeed: 0.2
 --- !u!1 &6027491262294309221
 GameObject:
   m_ObjectHideFlags: 0
