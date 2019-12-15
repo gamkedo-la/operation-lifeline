@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 			flicker1 = headLights[1].GetComponent<Flicker>();
 		}
 
-        GameObject.Find("GameOverCanvas");
+        gameOverCanvas = GameObject.Find("GameOverCanvas");
         gameOverScript = gameOverCanvas.GetComponent<GameOverText>();
 	}
 

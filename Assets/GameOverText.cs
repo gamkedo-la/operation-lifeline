@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class GameOverText : MonoBehaviour
 {
-    public Transform gameOverText;
+    public GameObject gameOverTextObject;
     private Animator gameOverTextAnimator;
-    private GameObject player;
+    public GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
-        gameOverText = this.gameObject.transform.GetChild(0);
-
-        GameObject.Find("Player");
-
-        gameOverTextAnimator = gameObject.GetComponent<Animator>();
+        gameOverTextAnimator = gameOverTextObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player)
         gameObject.transform.position = player.transform.position;
     }
 
