@@ -22,6 +22,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	bool isDead = false;
 	float regen = 0f;
 
+    private GameObject gameOverCanvas;
+    private GameOverText gameOverScript;
+
 	private void Start()
 	{
 		if (lifeLine)
@@ -41,6 +44,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		if (headLights[1]) {
 			flicker1 = headLights[1].GetComponent<Flicker>();
 		}
+
+        gameOverCanvas = GameObject.Find("GameOverCanvas");
+        gameOverScript = gameOverCanvas.GetComponent<GameOverText>();
 	}
 
 	public void Update()
@@ -126,5 +132,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		GameObject deathParticle = Instantiate(particle, transform.position, Quaternion.Euler(0f, 180f, 0f));
 		deathParticle.GetComponent<ParticleSystem>().Play();
 		Destroy(this.gameObject, 0.2f);
+        gameOverScript.ActivateAnimator();
 	}
 }
