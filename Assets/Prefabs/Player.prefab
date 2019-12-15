@@ -27,10 +27,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4825722243388223202}
   - {fileID: 1088314934}
   - {fileID: 1707501156}
   m_Father: {fileID: 4825722244958484894}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &256893906
 GameObject:
@@ -257,7 +258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4825722244958484894}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &887180088
 TrailRenderer:
@@ -385,7 +386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224799988}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1088314936
 ParticleSystem:
@@ -5235,7 +5236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224799988}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1707501158
 ParticleSystem:
@@ -10096,7 +10097,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3222227813141197087}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 0.9922739, b: 0.5518868, a: 1}
@@ -10264,6 +10265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4825722243388223202}
   - component: {fileID: 4825722243388223203}
+  - component: {fileID: 857930654}
   m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
@@ -10278,12 +10280,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4825722243388223205}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 6.7999973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4825722244958484894}
-  m_RootOrder: 1
+  m_Father: {fileID: 224799988}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &4825722243388223203
 Light:
@@ -10295,9 +10297,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 1, g: 0.9922739, b: 0.5518868, a: 1}
-  m_Intensity: 3
-  m_Range: 800
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 200
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -10330,10 +10332,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1079
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -10345,6 +10347,21 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &857930654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825722243388223205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb116dd5a8e64842ae043483a51bc69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAura: {fileID: 4825722243388223203}
+  redParticles: {fileID: 1088314936}
+  blueParticles: {fileID: 1707501158}
 --- !u!1 &4825722243523987146
 GameObject:
   m_ObjectHideFlags: 0
@@ -10467,7 +10484,7 @@ Transform:
   - {fileID: 4825722245135229149}
   - {fileID: 3727545140678615415}
   m_Father: {fileID: 4825722244958484894}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4825722243677165235
 GameObject:
@@ -10578,7 +10595,7 @@ Transform:
   - {fileID: 1908690751}
   - {fileID: 256893907}
   m_Father: {fileID: 4825722244958484894}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4825722243818142944
 AudioSource:
@@ -10711,7 +10728,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4825722243677165232}
-  - {fileID: 4825722243388223202}
   - {fileID: 4825722243818142949}
   - {fileID: 4825722243625711126}
   - {fileID: 5270426453289159584}
@@ -10885,7 +10901,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4825722245135229148}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 0.9922739, b: 0.5518868, a: 1}
@@ -11098,7 +11114,7 @@ PrefabInstance:
     - target: {fileID: 5742723362206970380, guid: 748daba2544ac0140afe53bf644d7d60,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5742723362206970380, guid: 748daba2544ac0140afe53bf644d7d60,
         type: 3}
