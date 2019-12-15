@@ -13993,6 +13993,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3192393258916384693, guid: 139285a0bbf629c4da0ad6a153332c11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225716280826709657, guid: 139285a0bbf629c4da0ad6a153332c11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825722244997640517, guid: 139285a0bbf629c4da0ad6a153332c11,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 16.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681148298146502054, guid: 139285a0bbf629c4da0ad6a153332c11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4825722243677165233, guid: 139285a0bbf629c4da0ad6a153332c11, type: 3}
     - {fileID: 1000227997543053506, guid: 139285a0bbf629c4da0ad6a153332c11, type: 3}
