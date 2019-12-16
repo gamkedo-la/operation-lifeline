@@ -29,8 +29,8 @@ public class Flasher : MonoBehaviour
 		blue = new Color(blue.r, blue.g, blue.b, blueAlpha);
 		if (red.a > blue.a) { lightAura.color = red; }
 		else { lightAura.color = blue; }
-		Debug.Log(lightAura.color);
-		Debug.Log("Red: " + red);
-		Debug.Log("Blue: " + blue);
+		//Debug.Log(lightAura.color);
+		//Debug.Log("Red: " + red);
+		//Debug.Log("Blue: " + blue);
     }
 }

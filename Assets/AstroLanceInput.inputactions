@@ -2,7 +2,7 @@
     "name": "AstroLanceInput",
     "maps": [
         {
-            "name": "AstroLance",
+            "name": "Player",
             "id": "1d575525-4401-4d16-98db-c0d7fc36ce3c",
             "actions": [
                 {

@@ -15,7 +15,7 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
     ""name"": ""AstroLanceInput"",
     ""maps"": [
         {
-            ""name"": ""AstroLance"",
+            ""name"": ""Player"",
             ""id"": ""1d575525-4401-4d16-98db-c0d7fc36ce3c"",
             ""actions"": [
                 {
@@ -75,10 +75,10 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
         }
     ]
 }");
-        // AstroLance
-        m_AstroLance = asset.FindActionMap("AstroLance", throwIfNotFound: true);
-        m_AstroLance_LeftEngine = m_AstroLance.FindAction("LeftEngine", throwIfNotFound: true);
-        m_AstroLance_RightEngine = m_AstroLance.FindAction("RightEngine", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_LeftEngine = m_Player.FindAction("LeftEngine", throwIfNotFound: true);
+        m_Player_RightEngine = m_Player.FindAction("RightEngine", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -125,34 +125,34 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // AstroLance
-    private readonly InputActionMap m_AstroLance;
-    private IAstroLanceActions m_AstroLanceActionsCallbackInterface;
-    private readonly InputAction m_AstroLance_LeftEngine;
-    private readonly InputAction m_AstroLance_RightEngine;
-    public struct AstroLanceActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_LeftEngine;
+    private readonly InputAction m_Player_RightEngine;
+    public struct PlayerActions
     {
         private @AstroLanceInput m_Wrapper;
-        public AstroLanceActions(@AstroLanceInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftEngine => m_Wrapper.m_AstroLance_LeftEngine;
-        public InputAction @RightEngine => m_Wrapper.m_AstroLance_RightEngine;
-        public InputActionMap Get() { return m_Wrapper.m_AstroLance; }
+        public PlayerActions(@AstroLanceInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftEngine => m_Wrapper.m_Player_LeftEngine;
+        public InputAction @RightEngine => m_Wrapper.m_Player_RightEngine;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(AstroLanceActions set) { return set.Get(); }
-        public void SetCallbacks(IAstroLanceActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_AstroLanceActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @LeftEngine.started -= m_Wrapper.m_AstroLanceActionsCallbackInterface.OnLeftEngine;
-                @LeftEngine.performed -= m_Wrapper.m_AstroLanceActionsCallbackInterface.OnLeftEngine;
-                @LeftEngine.canceled -= m_Wrapper.m_AstroLanceActionsCallbackInterface.OnLeftEngine;
-                @RightEngine.started -= m_Wrapper.m_AstroLanceActionsCallbackInterface.OnRightEngine;
-                @RightEngine.performed -= m_Wrapper.m_AstroLanceActionsCallbackInterface.OnRightEngine;
-                @RightEngine.canceled -= m_Wrapper.m_AstroLanceActionsCallbackInterface.OnRightEngine;
+                @LeftEngine.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftEngine;
+                @LeftEngine.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftEngine;
+                @LeftEngine.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftEngine;
+                @RightEngine.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightEngine;
+                @RightEngine.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightEngine;
+                @RightEngine.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightEngine;
             }
-            m_Wrapper.m_AstroLanceActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @LeftEngine.started += instance.OnLeftEngine;
@@ -164,7 +164,7 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
             }
         }
     }
-    public AstroLanceActions @AstroLance => new AstroLanceActions(this);
+    public PlayerActions @Player => new PlayerActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -174,7 +174,7 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    public interface IAstroLanceActions
+    public interface IPlayerActions
     {
         void OnLeftEngine(InputAction.CallbackContext context);
         void OnRightEngine(InputAction.CallbackContext context);
