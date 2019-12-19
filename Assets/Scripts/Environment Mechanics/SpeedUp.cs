@@ -7,7 +7,7 @@ public class SpeedUp : Collectibles
     private PlayerController playerController;
     public float thrustMultiplier = 1.2f;
 
-    protected override void OnTriggerEnter2D(Collider player)
+    protected override void OnTriggerEnter2D(Collider2D player)
     {
         playerController = player.GetComponent<PlayerController>();
         playerController.thrust *= thrustMultiplier;

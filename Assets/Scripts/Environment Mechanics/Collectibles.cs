@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectibles : MonoBehaviour
 {
-    protected virtual void OnTriggerEnter2D(Collider player)
+    protected virtual void OnTriggerEnter2D(Collider2D player)
     {
         Destroy(gameObject);
     }
