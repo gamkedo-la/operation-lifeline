@@ -26,8 +26,11 @@ public class HurtPlayer : MonoBehaviour
 		{
 			InflictDamage(other, damageOnImpact);
 			Explode();
-            playerShakeScript.ShakeMe();
-		}
+            if(playerShakeScript != null)
+            {
+                playerShakeScript.ShakeMe();
+            }
+        }
 		if (destroyedOnImpact) { SelfDestruct(); }
 	}
 
