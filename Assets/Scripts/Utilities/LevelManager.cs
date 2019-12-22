@@ -13,6 +13,6 @@ public class LevelManager : MonoBehaviour
 
     public void ReloadCurrentScene()
     {
-        GameManager.Instance.LoadScene(SceneManager.GetActiveScene().ToString());
+        GameManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

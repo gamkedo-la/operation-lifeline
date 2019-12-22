@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private GameObject gameOverCanvas;
     private GameOverText gameOverScript;
+    [SerializeField]
     private Button tryAgainButton;
 
     private void Start()
@@ -49,8 +50,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         gameOverCanvas = GameObject.Find("GameOverCanvas");
         gameOverScript = gameOverCanvas.GetComponent<GameOverText>();
-        tryAgainButton = gameOverCanvas.GetComponent<Button>();
-        tryAgainButton.enabled = false;
+
+        tryAgainButton.gameObject.SetActive(false);
 	}
 
 	public void Update()
@@ -137,7 +138,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		deathParticle.GetComponent<ParticleSystem>().Play();
 		Destroy(this.gameObject, 0.2f);
         gameOverScript.ActivateAnimator();
-        tryAgainButton.enabled = true;
+        tryAgainButton.gameObject.SetActive(true);
 
 	}
 }
