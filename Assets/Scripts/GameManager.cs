@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private GameObject homeBase;
     private GameObject player;
     private float totalJourneyDistanceThisLevel = 0;
+    [SerializeField] private float progressIndicatorUpdateInterval = 3;
+    private Scrollbar progressIndicatorUI;
 
     public void SetPause(bool toPause = true) {
         isPaused = toPause;
@@ -54,8 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         pauseTextUI = GetComponentsInChildren<Text>()[0];
-
-        Debug.Log(GetTotalJourneyDistance());
+        progressIndicatorUI = GetComponentsInChildren<Scrollbar>()[0];
 
         InitializeScene();
     }
@@ -74,9 +75,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator playerPositionUpdate() {
         while (true) {
             Vector3 playerCurrentPosition = player.transform.position;
-            Debug.Log(playerCurrentPosition.y / totalJourneyDistanceThisLevel);
+            progressIndicatorUI.value = playerCurrentPosition.y / totalJourneyDistanceThisLevel;
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(progressIndicatorUpdateInterval);
         }
     }
 

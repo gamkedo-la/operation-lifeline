@@ -10298,8 +10298,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 200
+  m_Intensity: 6
+  m_Range: 300
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -10709,6 +10709,8 @@ GameObject:
   - component: {fileID: 4825722244958484881}
   - component: {fileID: 3067926702452503036}
   - component: {fileID: 21394276293648354}
+  - component: {fileID: 2007764069}
+  - component: {fileID: 2007764077}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -10823,7 +10825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920b262f2d928174381d949ee5f0f9b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLight: {fileID: 4825722243388223203}
+  pointLight: {fileID: 0}
   headLights:
   - {fileID: 4825722245135229146}
   - {fileID: 5984917761291740511}
@@ -10862,6 +10864,81 @@ MonoBehaviour:
   thrusterAudioSource: {fileID: 4825722243818142944}
   thrusterSound: {fileID: 0}
   thrusterVolume: 50
+--- !u!114 &2007764069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825722244958484882}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d2069edea34ef094d8b59601e3d8d298,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2007764077}
+        m_MethodName: LeftEngineCalled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e8bc622a-86f4-46ae-b5c9-dd2359e314f7
+    m_ActionName: Player/LeftEngine[/Keyboard/leftCtrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e600b77b-3f44-4e98-bcb0-d9a35c4ffb27
+    m_ActionName: Player/RightEngine[/Keyboard/rightShift]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &2007764077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825722244958484882}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265ae88878bfaf44f8b48ef44e62857a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flightMode: 1
+  thrust: 50
+  leftPlayerTorque: -80000
+  rightPlayerTorque: 80000
+  playerEffects: {fileID: 3067926702452503036}
 --- !u!1 &4825722245135229148
 GameObject:
   m_ObjectHideFlags: 0
@@ -11153,15 +11230,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 748daba2544ac0140afe53bf644d7d60, type: 3}
---- !u!4 &5270426453289159584 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5742723362206970380, guid: 748daba2544ac0140afe53bf644d7d60,
-    type: 3}
-  m_PrefabInstance: {fileID: 474585054894471596}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7180928345957262310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7291847724496935498, guid: 748daba2544ac0140afe53bf644d7d60,
+    type: 3}
+  m_PrefabInstance: {fileID: 474585054894471596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5270426453289159584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5742723362206970380, guid: 748daba2544ac0140afe53bf644d7d60,
     type: 3}
   m_PrefabInstance: {fileID: 474585054894471596}
   m_PrefabAsset: {fileID: 0}
