@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonRemapScreenController : MonoBehaviour
@@ -18,7 +17,7 @@ public class ButtonRemapScreenController : MonoBehaviour
 
     private void OkButtonClicked()
     {
-        playerActionMap.Enable();
-        SceneManager.LoadScene("NewInput");
+        playerActionMap.Enable();        
+        GameManager.Instance.LoadScene("NewInput");
     }
 }

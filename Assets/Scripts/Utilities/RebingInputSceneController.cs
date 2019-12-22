@@ -23,6 +23,6 @@ public class RebingInputSceneController : MonoBehaviour
     private void StartButtonClicked()
     {
         playerActionMap.Enable();
-        SceneManager.LoadScene(sceneToLoad);
+        GameManager.Instance.LoadScene(sceneToLoad);
     }
 }
