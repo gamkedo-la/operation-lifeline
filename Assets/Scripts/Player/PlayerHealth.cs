@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
@@ -24,8 +25,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private GameObject gameOverCanvas;
     private GameOverText gameOverScript;
+    private Button tryAgainButton;
 
-	private void Start()
+    private void Start()
 	{
 		if (lifeLine)
 		{
@@ -47,6 +49,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         gameOverCanvas = GameObject.Find("GameOverCanvas");
         gameOverScript = gameOverCanvas.GetComponent<GameOverText>();
+        tryAgainButton = gameOverCanvas.GetComponent<Button>();
+        tryAgainButton.enabled = false;
 	}
 
 	public void Update()
@@ -133,5 +137,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		deathParticle.GetComponent<ParticleSystem>().Play();
 		Destroy(this.gameObject, 0.2f);
         gameOverScript.ActivateAnimator();
+        tryAgainButton.enabled = true;
+
 	}
 }
