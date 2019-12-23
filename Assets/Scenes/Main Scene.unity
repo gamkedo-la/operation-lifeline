@@ -13159,6 +13159,11 @@ PrefabInstance:
       propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5105430718242641519, guid: befc39786c022ff4bb9a27753a83c1df,
+        type: 3}
+      propertyPath: InheritVelocityModule.m_Curve.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: befc39786c022ff4bb9a27753a83c1df, type: 3}
 --- !u!1001 &2021526595
@@ -13815,7 +13820,7 @@ PrefabInstance:
     - target: {fileID: 5105430718242641519, guid: befc39786c022ff4bb9a27753a83c1df,
         type: 3}
       propertyPath: InheritVelocityModule.m_Curve.scalar
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: befc39786c022ff4bb9a27753a83c1df, type: 3}
