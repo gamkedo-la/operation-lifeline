@@ -2529,6 +2529,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 933157429}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1186822273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5105430718242641512, guid: befc39786c022ff4bb9a27753a83c1df,
+    type: 3}
+  m_PrefabInstance: {fileID: 5105430719118452610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1211178816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4913314143490122, guid: b646e59dacacd3145b1f6d39bc348dc2,
@@ -12980,6 +12986,12 @@ Transform:
   m_Father: {fileID: 717883390}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1925956271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5105430718242641512, guid: befc39786c022ff4bb9a27753a83c1df,
+    type: 3}
+  m_PrefabInstance: {fileID: 2015550424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1974705497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4913314143490122, guid: b646e59dacacd3145b1f6d39bc348dc2,
@@ -13070,7 +13082,7 @@ PrefabInstance:
     - target: {fileID: 5105430718242641512, guid: befc39786c022ff4bb9a27753a83c1df,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5105430718242641513, guid: befc39786c022ff4bb9a27753a83c1df,
         type: 3}
@@ -13140,6 +13152,11 @@ PrefabInstance:
     - target: {fileID: 5105430718242641513, guid: befc39786c022ff4bb9a27753a83c1df,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105430718242641519, guid: befc39786c022ff4bb9a27753a83c1df,
+        type: 3}
+      propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13589,6 +13606,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3067926702452503036, guid: 139285a0bbf629c4da0ad6a153332c11,
+        type: 3}
+      propertyPath: rightThrusterPFX
+      value: 
+      objectReference: {fileID: 1925956271}
+    - target: {fileID: 3067926702452503036, guid: 139285a0bbf629c4da0ad6a153332c11,
+        type: 3}
+      propertyPath: leftThrusterPFX
+      value: 
+      objectReference: {fileID: 1186822273}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 139285a0bbf629c4da0ad6a153332c11, type: 3}
 --- !u!4 &4825722243640161783 stripped
@@ -13698,7 +13725,7 @@ PrefabInstance:
     - target: {fileID: 5105430718242641512, guid: befc39786c022ff4bb9a27753a83c1df,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5105430718242641513, guid: befc39786c022ff4bb9a27753a83c1df,
         type: 3}
@@ -13768,6 +13795,26 @@ PrefabInstance:
     - target: {fileID: 5105430718242641513, guid: befc39786c022ff4bb9a27753a83c1df,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105430718242641519, guid: befc39786c022ff4bb9a27753a83c1df,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105430718242641519, guid: befc39786c022ff4bb9a27753a83c1df,
+        type: 3}
+      propertyPath: useRigidbodyForVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105430718242641519, guid: befc39786c022ff4bb9a27753a83c1df,
+        type: 3}
+      propertyPath: InheritVelocityModule.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105430718242641519, guid: befc39786c022ff4bb9a27753a83c1df,
+        type: 3}
+      propertyPath: InheritVelocityModule.m_Curve.scalar
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
