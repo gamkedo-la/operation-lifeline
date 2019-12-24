@@ -18,8 +18,6 @@ public class PlayerEffects : MonoBehaviour
     {
         left_pfx = leftThrusterPFX.GetComponent(typeof(ParticleSystem)) as ParticleSystem;
         right_pfx = rightThrusterPFX.GetComponent(typeof(ParticleSystem)) as ParticleSystem;
-        left_pfx.enableEmission = false;
-        right_pfx.enableEmission = false;
     }
 
 	public void SetThrusters(bool leftPlayerThrusting, bool rightPlayerThrusting)
