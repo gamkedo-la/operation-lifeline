@@ -5,19 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-	[SerializeField] private Light pointLight;
-	[SerializeField] private Light[] headLights;
 	[Range(1,100)] private int health = 100;
 	[Range(0, 100)] [SerializeField] private int maxRengeration = 75;
 	public float regenPerSec = 5f;
 	public bool regenerating = true;
-	float lightIntensity = 0;
-	Color lightColor = Color.white;
-	public GameObject particle;
+	public GameObject deathParticlePrefab;
 	public Transform lifeLine;
 	private MeshRenderer lifeLineMesh;
-	private Flicker flicker0;
-	private Flicker flicker1;
 	float lifeLineLength;
 	Color lifeLineColor;
 	bool isDead = false;
@@ -35,17 +29,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 			lifeLineLength = lifeLine.localScale.y;
 			lifeLineMesh = lifeLine.GetComponent<MeshRenderer>();
 			lifeLineColor = lifeLineMesh.sharedMaterial.color;
-		}
-		if (pointLight) 
-		{
-			lightColor = pointLight.color;
-			lightIntensity = pointLight.intensity;
-		}
-		if (headLights[0]) {
-			flicker0 = headLights[0].GetComponent<Flicker>();
-		}
-		if (headLights[1]) {
-			flicker1 = headLights[1].GetComponent<Flicker>();
 		}
 
         gameOverCanvas = GameObject.Find("GameOverCanvas");
@@ -95,36 +78,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 			lifeLineMesh.sharedMaterial.color = newColor;
 			lifeLineMesh.material.color = newColor;
 		}
-		if (pointLight)
-		{
-			pointLight.intensity = lightIntensity * healthPercent;
-			pointLight.color = new Color(lightColor.r, 
-										 lightColor.g * healthPercent, 
-										 lightColor.b);
-		}
-		if (headLights.Length>0)
-		{
-			if (health<50) 
-			{
-				if (headLights[0]) { headLights[0].enabled = true; }
-				if (headLights[1]) { headLights[1].enabled = true; }
-				if (health>45)
-				{
-					if (flicker0) { flicker0.flickerVariance = 0.3f; }
-					if (flicker1) { flicker1.flickerVariance = 0.3f; }
-				}
-				else 
-				{ 
-					if (flicker0) { flicker0.flickerVariance = 0.06f; }
-					if (flicker1) { flicker1.flickerVariance = 0.06f; }
-				}
-			}
-			else
-			{
-				if (headLights[0]) { headLights[0].enabled = false; }
-				if (headLights[1]) { headLights[1].enabled = false; }
-			}
-		}
 	}
 
 	public void Die()
@@ -134,11 +87,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		{
 			if (child.gameObject.tag=="Wreckage") { child.SetParent(null); }
 		}
-		GameObject deathParticle = Instantiate(particle, transform.position, Quaternion.Euler(0f, 180f, 0f));
+		GameObject deathParticle = Instantiate(deathParticlePrefab, transform.position, Quaternion.Euler(0f, 180f, 0f));
 		deathParticle.GetComponent<ParticleSystem>().Play();
 		Destroy(this.gameObject, 0.2f);
         gameOverScript.ActivateAnimator();
         tryAgainButton.gameObject.SetActive(true);
-
 	}
 }
