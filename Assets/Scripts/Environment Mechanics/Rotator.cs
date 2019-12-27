@@ -8,6 +8,8 @@ public class Rotator : MonoBehaviour
 	[SerializeField] private bool weightedToward0 = true;
 	[SerializeField] private float minRrotationSpeed = -0.3f;
 	[SerializeField] private float maxRrotationSpeed = 0.3f;
+    [SerializeField] private enum RotationDirection { left, right, up };
+    [SerializeField] RotationDirection rotationDirection = RotationDirection.up;
 	private float rotationSpeed = 0f;
 
 	private void Start()
@@ -22,6 +24,21 @@ public class Rotator : MonoBehaviour
 
 	private void Rotate(float rotSpeed)
 	{
-		transform.Rotate(Vector3.up, Space.Self);
-	}
+        if(rotationDirection == RotationDirection.up)
+        {
+            transform.Rotate(Vector3.up, Space.Self);
+        }
+        if (rotationDirection == RotationDirection.left)
+        {
+            transform.Rotate(Vector3.left, Space.Self);
+        }
+        if (rotationDirection == RotationDirection.right)
+        {
+            transform.Rotate(Vector3.right, Space.Self);
+        }
+        else
+        {
+            return;
+        }
+    }
 }
