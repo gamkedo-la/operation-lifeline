@@ -9,31 +9,15 @@
                     "name": "LeftEngineOn",
                     "type": "Value",
                     "id": "e8bc622a-86f4-46ae-b5c9-dd2359e314f7",
-                    "expectedControlType": "Key",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "LeftEngineOff",
-                    "type": "Button",
-                    "id": "57d41185-573c-46a4-a87c-29660b9d6fc4",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
                 {
                     "name": "RightEngineOn",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "e600b77b-3f44-4e98-bcb0-d9a35c4ffb27",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "RightEngineOff",
-                    "type": "Button",
-                    "id": "e8fa5909-c5f9-40e3-9e18-4e77703c16c5",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 }
@@ -43,7 +27,7 @@
                     "name": "",
                     "id": "c2554bab-3504-4970-af50-c0a10a35c726",
                     "path": "<Keyboard>/leftCtrl",
-                    "interactions": "Hold(duration=0.01,pressPoint=0.5)",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "LeftEngineOn",
@@ -54,32 +38,10 @@
                     "name": "",
                     "id": "bdbcddf6-332d-44cb-ac17-e122fb5c14b7",
                     "path": "<Keyboard>/rightShift",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "RightEngineOn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "33f89095-80c0-4807-b1e8-88fe495304af",
-                    "path": "<Keyboard>/leftCtrl",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftEngineOff",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "97a24f91-975d-46c7-ad08-d715103a972c",
-                    "path": "<Keyboard>/rightShift",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightEngineOff",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

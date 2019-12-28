@@ -9,29 +9,8 @@ public class InputTest : MonoBehaviour
     bool leftEngineOn = false;
     bool rightEngineOn = false;
 
-    public void LeftEngineCalled(InputAction.CallbackContext context)
-    {
-        leftEngineOn = true;        
-    }
+    private AstroLanceInput astroLanceInput;
 
-    public void LeftEngineOff(InputAction.CallbackContext context)
-    {
-        leftEngineOn = false;        
-    }
-
-    public void RightEngineCalled(InputAction.CallbackContext context)
-    {
-        rightEngineOn = true;
-    }
-
-    public void RightEngineOff(InputAction.CallbackContext context)
-    {
-        rightEngineOn = false;
-    }
-
-    public UnityEngine.InputSystem.PlayerInput playerInput;
-
-    private AstroLanceInput inputActions;
     
 
     private enum FlightMode { Newtonian, Direct }
@@ -49,6 +28,39 @@ public class InputTest : MonoBehaviour
     Rigidbody2D rigidbody2D;
     RigidbodyConstraints2D rigidbodyConstraints2D;
     [SerializeField] private PlayerEffects playerEffects;
+
+    private void OnEnable()
+    {
+        astroLanceInput.PlayerActionMap.LeftEngineOn.performed += LeftEngineCalled;
+        astroLanceInput.PlayerActionMap.LeftEngineOn.Enable();
+
+        astroLanceInput.PlayerActionMap.RightEngineOn.performed += RightEngineCalled;
+        astroLanceInput.PlayerActionMap.RightEngineOn.Enable();
+    }
+
+    private void OnDisable()
+    {
+        astroLanceInput.PlayerActionMap.LeftEngineOn.Disable();
+        astroLanceInput.PlayerActionMap.RightEngineOn.Disable();
+
+    }
+
+    public void LeftEngineCalled(InputAction.CallbackContext context)
+    {
+        var value = context.ReadValue<float>();
+        leftEngineOn = value >= 0.9f;
+    }
+
+    public void RightEngineCalled(InputAction.CallbackContext context)
+    {
+        var value = context.ReadValue<float>();
+        rightEngineOn = value >= 0.9f;
+    }
+
+    private void Awake()
+    {
+        astroLanceInput = new AstroLanceInput();
+    }
 
     void Start()
     {
