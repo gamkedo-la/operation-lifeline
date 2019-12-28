@@ -9,9 +9,7 @@ public class InputTest : MonoBehaviour
     bool leftEngineOn = false;
     bool rightEngineOn = false;
 
-    private AstroLanceInput astroLanceInput;
-
-    
+    private AstroLanceInput astroLanceInput;    
 
     private enum FlightMode { Newtonian, Direct }
     [SerializeField] private FlightMode flightMode;
@@ -28,7 +26,7 @@ public class InputTest : MonoBehaviour
     Rigidbody2D rigidbody2D;
     RigidbodyConstraints2D rigidbodyConstraints2D;
     [SerializeField] private PlayerEffects playerEffects;
-
+/*
     private void OnEnable()
     {
         astroLanceInput.PlayerActionMap.LeftEngineOn.performed += LeftEngineCalled;
@@ -44,7 +42,7 @@ public class InputTest : MonoBehaviour
         astroLanceInput.PlayerActionMap.RightEngineOn.Disable();
 
     }
-
+    */
     public void LeftEngineCalled(InputAction.CallbackContext context)
     {
         var value = context.ReadValue<float>();
