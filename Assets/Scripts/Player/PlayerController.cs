@@ -31,8 +31,15 @@ public class PlayerController : MonoBehaviour
 		thrustAudio.start();
 	}
 
-  
-    void FixedUpdate()
+	void OnDestroy() 
+	{
+		thrustAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+		thrustAudio.release();
+	}
+
+
+
+	void FixedUpdate()
     {
 		PlayerInput.CheckInput();
 
