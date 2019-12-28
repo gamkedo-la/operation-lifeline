@@ -476,7 +476,6 @@ GameObject:
   - component: {fileID: 465471922}
   - component: {fileID: 465471921}
   - component: {fileID: 465471920}
-  - component: {fileID: 465471923}
   - component: {fileID: 465471924}
   m_Layer: 0
   m_Name: LeftEngineRebind
@@ -584,22 +583,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465471918}
   m_CullTransparentMesh: 0
---- !u!114 &465471923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465471918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5119fc602a2a92b419e9ce02e34b8237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 465471920}
-  text: {fileID: 1225128173}
-  astroLanceActionReference: {fileID: -5128347081789735576, guid: d2069edea34ef094d8b59601e3d8d298,
-    type: 3}
 --- !u!114 &465471924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,8 +596,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 465471920}
-  text: {fileID: 0}
-  astroLanceActionReference: {fileID: 0}
+  text: {fileID: 1225128173}
+  astroLanceActionReference: {fileID: -6432913067732284701, guid: d2069edea34ef094d8b59601e3d8d298,
+    type: 3}
 --- !u!1 &499530564
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +809,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Start \nMission"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1541,7 +1525,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Left Engine
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

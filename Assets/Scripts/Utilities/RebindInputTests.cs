@@ -14,20 +14,21 @@ public class RebindInputTests : MonoBehaviour
     public InputActionReference astroLanceActionReference;
 
     private InputAction astroLanceInputAction;
+    private InputAction astronLanceInputActionOff;
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
 
 
     void Awake()
     {        
         astroLanceInput = new AstroLanceInput();
-        astroLanceInputAction = astroLanceActionReference.action;
+        astroLanceInputAction = astroLanceActionReference.action;        
 
         button.onClick.AddListener(delegate { RemapButtonClicked(astroLanceInputAction); });
     }
 
     public void RemapLeftEngine()
     {                
-        RemapButtonClicked(astroLanceInput.Player.LeftEngine);
+        RemapButtonClicked(astroLanceInput.PlayerActionMap.LeftEngineOn);        
     }
 
     public void RemapButtonClicked(InputAction actionToRebind) 

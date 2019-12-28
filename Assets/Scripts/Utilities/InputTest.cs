@@ -11,8 +11,28 @@ public class InputTest : MonoBehaviour
 
     public void LeftEngineCalled(InputAction.CallbackContext context)
     {
-        leftEngineOn = true;
+        leftEngineOn = true;        
     }
+
+    public void LeftEngineOff(InputAction.CallbackContext context)
+    {
+        leftEngineOn = false;        
+    }
+
+    public void RightEngineCalled(InputAction.CallbackContext context)
+    {
+        rightEngineOn = true;
+    }
+
+    public void RightEngineOff(InputAction.CallbackContext context)
+    {
+        rightEngineOn = false;
+    }
+
+    public UnityEngine.InputSystem.PlayerInput playerInput;
+
+    private AstroLanceInput inputActions;
+    
 
     private enum FlightMode { Newtonian, Direct }
     [SerializeField] private FlightMode flightMode;
@@ -40,7 +60,7 @@ public class InputTest : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlayerInput.CheckInput();
+        //PlayerInput.CheckInput();
 
         if (!GameManager.Instance.IsPaused)
         {
@@ -64,7 +84,7 @@ public class InputTest : MonoBehaviour
                 currentThrust += thrust;
             }
             else if (!leftThrusterFunctional) { rigidbody2D.angularVelocity = 0f; }
-            if (PlayerInput.RightThrust && rightThrusterFunctional)
+            if (rightEngineOn && rightThrusterFunctional)
             {
                 currentTorque += rightPlayerTorque;
                 currentThrust += thrust;
@@ -73,7 +93,7 @@ public class InputTest : MonoBehaviour
             constantForce2D.relativeForce = new Vector2(0f, currentThrust);
             constantForce2D.torque = currentTorque;
             //SetThrusters(PlayerInput.LeftThrust && leftThrusterFunctional, PlayerInput.RightThrust && rightThrusterFunctional);
-            SetThrusters(leftEngineOn, PlayerInput.RightThrust);
+            SetThrusters(leftEngineOn, rightEngineOn);
 
             savedRelativeForce = constantForce2D.relativeForce;
             savedTorque = constantForce2D.torque;

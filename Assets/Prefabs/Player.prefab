@@ -11006,9 +11006,50 @@ MonoBehaviour:
     m_ActionId: e8bc622a-86f4-46ae-b5c9-dd2359e314f7
     m_ActionName: Player/LeftEngine[/Keyboard/leftCtrl]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2007764077}
+        m_MethodName: RightEngineCalled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e600b77b-3f44-4e98-bcb0-d9a35c4ffb27
     m_ActionName: Player/RightEngine[/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2007764077}
+        m_MethodName: LeftEngineOff
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 57d41185-573c-46a4-a87c-29660b9d6fc4
+    m_ActionName: Player/RightEngine[/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2007764077}
+        m_MethodName: RightEngineOff
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e8fa5909-c5f9-40e3-9e18-4e77703c16c5
+    m_ActionName: Player/RightEngineOff[/Keyboard/rightShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -11026,6 +11067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265ae88878bfaf44f8b48ef44e62857a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 2007764069}
   flightMode: 1
   thrust: 50
   leftPlayerTorque: -80000

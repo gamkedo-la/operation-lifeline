@@ -15,7 +15,7 @@ public class RebingInputSceneController : MonoBehaviour
 
     void Start()
     {
-        playerActionMap = astroLanceInputActionAsset.FindActionMap("Player");
+        playerActionMap = astroLanceInputActionAsset.FindActionMap("PlayerActionMap");
         playerActionMap.Disable();
         startButton.onClick.AddListener(StartButtonClicked);
     }

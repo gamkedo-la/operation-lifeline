@@ -15,21 +15,37 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
     ""name"": ""AstroLanceInput"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""PlayerActionMap"",
             ""id"": ""1d575525-4401-4d16-98db-c0d7fc36ce3c"",
             ""actions"": [
                 {
-                    ""name"": ""LeftEngine"",
-                    ""type"": ""Button"",
+                    ""name"": ""LeftEngineOn"",
+                    ""type"": ""Value"",
                     ""id"": ""e8bc622a-86f4-46ae-b5c9-dd2359e314f7"",
+                    ""expectedControlType"": ""Key"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LeftEngineOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""57d41185-573c-46a4-a87c-29660b9d6fc4"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""RightEngine"",
+                    ""name"": ""RightEngineOn"",
                     ""type"": ""Button"",
                     ""id"": ""e600b77b-3f44-4e98-bcb0-d9a35c4ffb27"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RightEngineOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""e8fa5909-c5f9-40e3-9e18-4e77703c16c5"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -40,10 +56,10 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""c2554bab-3504-4970-af50-c0a10a35c726"",
                     ""path"": ""<Keyboard>/leftCtrl"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Hold(duration=0.01,pressPoint=0.5)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftEngine"",
+                    ""action"": ""LeftEngineOn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -51,10 +67,32 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""bdbcddf6-332d-44cb-ac17-e122fb5c14b7"",
                     ""path"": ""<Keyboard>/rightShift"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Hold(duration=0.01)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightEngine"",
+                    ""action"": ""RightEngineOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33f89095-80c0-4807-b1e8-88fe495304af"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftEngineOff"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97a24f91-975d-46c7-ad08-d715103a972c"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightEngineOff"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -75,10 +113,12 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
         }
     ]
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_LeftEngine = m_Player.FindAction("LeftEngine", throwIfNotFound: true);
-        m_Player_RightEngine = m_Player.FindAction("RightEngine", throwIfNotFound: true);
+        // PlayerActionMap
+        m_PlayerActionMap = asset.FindActionMap("PlayerActionMap", throwIfNotFound: true);
+        m_PlayerActionMap_LeftEngineOn = m_PlayerActionMap.FindAction("LeftEngineOn", throwIfNotFound: true);
+        m_PlayerActionMap_LeftEngineOff = m_PlayerActionMap.FindAction("LeftEngineOff", throwIfNotFound: true);
+        m_PlayerActionMap_RightEngineOn = m_PlayerActionMap.FindAction("RightEngineOn", throwIfNotFound: true);
+        m_PlayerActionMap_RightEngineOff = m_PlayerActionMap.FindAction("RightEngineOff", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -125,46 +165,62 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_LeftEngine;
-    private readonly InputAction m_Player_RightEngine;
-    public struct PlayerActions
+    // PlayerActionMap
+    private readonly InputActionMap m_PlayerActionMap;
+    private IPlayerActionMapActions m_PlayerActionMapActionsCallbackInterface;
+    private readonly InputAction m_PlayerActionMap_LeftEngineOn;
+    private readonly InputAction m_PlayerActionMap_LeftEngineOff;
+    private readonly InputAction m_PlayerActionMap_RightEngineOn;
+    private readonly InputAction m_PlayerActionMap_RightEngineOff;
+    public struct PlayerActionMapActions
     {
         private @AstroLanceInput m_Wrapper;
-        public PlayerActions(@AstroLanceInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftEngine => m_Wrapper.m_Player_LeftEngine;
-        public InputAction @RightEngine => m_Wrapper.m_Player_RightEngine;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public PlayerActionMapActions(@AstroLanceInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftEngineOn => m_Wrapper.m_PlayerActionMap_LeftEngineOn;
+        public InputAction @LeftEngineOff => m_Wrapper.m_PlayerActionMap_LeftEngineOff;
+        public InputAction @RightEngineOn => m_Wrapper.m_PlayerActionMap_RightEngineOn;
+        public InputAction @RightEngineOff => m_Wrapper.m_PlayerActionMap_RightEngineOff;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(PlayerActionMapActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActionMapActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionMapActionsCallbackInterface != null)
             {
-                @LeftEngine.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftEngine;
-                @LeftEngine.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftEngine;
-                @LeftEngine.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftEngine;
-                @RightEngine.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightEngine;
-                @RightEngine.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightEngine;
-                @RightEngine.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightEngine;
+                @LeftEngineOn.started -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnLeftEngineOn;
+                @LeftEngineOn.performed -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnLeftEngineOn;
+                @LeftEngineOn.canceled -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnLeftEngineOn;
+                @LeftEngineOff.started -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnLeftEngineOff;
+                @LeftEngineOff.performed -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnLeftEngineOff;
+                @LeftEngineOff.canceled -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnLeftEngineOff;
+                @RightEngineOn.started -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOn;
+                @RightEngineOn.performed -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOn;
+                @RightEngineOn.canceled -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOn;
+                @RightEngineOff.started -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOff;
+                @RightEngineOff.performed -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOff;
+                @RightEngineOff.canceled -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOff;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionMapActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @LeftEngine.started += instance.OnLeftEngine;
-                @LeftEngine.performed += instance.OnLeftEngine;
-                @LeftEngine.canceled += instance.OnLeftEngine;
-                @RightEngine.started += instance.OnRightEngine;
-                @RightEngine.performed += instance.OnRightEngine;
-                @RightEngine.canceled += instance.OnRightEngine;
+                @LeftEngineOn.started += instance.OnLeftEngineOn;
+                @LeftEngineOn.performed += instance.OnLeftEngineOn;
+                @LeftEngineOn.canceled += instance.OnLeftEngineOn;
+                @LeftEngineOff.started += instance.OnLeftEngineOff;
+                @LeftEngineOff.performed += instance.OnLeftEngineOff;
+                @LeftEngineOff.canceled += instance.OnLeftEngineOff;
+                @RightEngineOn.started += instance.OnRightEngineOn;
+                @RightEngineOn.performed += instance.OnRightEngineOn;
+                @RightEngineOn.canceled += instance.OnRightEngineOn;
+                @RightEngineOff.started += instance.OnRightEngineOff;
+                @RightEngineOff.performed += instance.OnRightEngineOff;
+                @RightEngineOff.canceled += instance.OnRightEngineOff;
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
+    public PlayerActionMapActions @PlayerActionMap => new PlayerActionMapActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -174,9 +230,11 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    public interface IPlayerActions
+    public interface IPlayerActionMapActions
     {
-        void OnLeftEngine(InputAction.CallbackContext context);
-        void OnRightEngine(InputAction.CallbackContext context);
+        void OnLeftEngineOn(InputAction.CallbackContext context);
+        void OnLeftEngineOff(InputAction.CallbackContext context);
+        void OnRightEngineOn(InputAction.CallbackContext context);
+        void OnRightEngineOff(InputAction.CallbackContext context);
     }
 }
