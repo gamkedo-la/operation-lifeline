@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{326a0abf-38cb-49d9-8e7a-2232133c6fe6}">
+		<property name="name">
+			<value>Number of thrusters</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2574fdde-c7a1-48df-a2f7-00cbd7fab34f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ee206af5-e5e4-4c0f-b004-7a0b7aea80db}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ee206af5-e5e4-4c0f-b004-7a0b7aea80db}">
+		<property name="minimum">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.0000001192092896</value>
+		</property>
+	</object>
+</objects>

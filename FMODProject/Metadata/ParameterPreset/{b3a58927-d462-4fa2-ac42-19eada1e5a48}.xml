@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{b3a58927-d462-4fa2-ac42-19eada1e5a48}">
+		<property name="name">
+			<value>Under water</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2574fdde-c7a1-48df-a2f7-00cbd7fab34f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e90740c3-04da-457d-b5c5-4f4ea66ab6da}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e90740c3-04da-457d-b5c5-4f4ea66ab6da}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.99999994039535522</value>
+		</property>
+	</object>
+</objects>
