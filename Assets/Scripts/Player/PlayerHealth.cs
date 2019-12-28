@@ -22,7 +22,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField]
     private Button tryAgainButton;
 
-    private void Start()
+	private FMOD.Studio.EventInstance impactAudio;
+
+	private void Start()
 	{
 		if (lifeLine)
 		{
@@ -61,6 +63,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	public void TakeDamage(int damage)
 	{
 		AdjustHealth(-damage);
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/Player/Impact");
 		if (health<1 && !isDead) { Die(); }
 	}
 
