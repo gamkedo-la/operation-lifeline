@@ -20,11 +20,15 @@ public class PlayerController : MonoBehaviour
 	RigidbodyConstraints2D rigidbodyConstraints2D;
 	[SerializeField] private PlayerEffects playerEffects;
 
+	private FMOD.Studio.EventInstance thrustAudio;
+
 	void Start()
     {
         constantForce2D = GetComponent<ConstantForce2D>();
 		rigidbody2D = GetComponent<Rigidbody2D>();
 		rigidbodyConstraints2D = new RigidbodyConstraints2D();
+		thrustAudio = FMODUnity.RuntimeManager.CreateInstance("event:/Main/Player/Thrust");
+		thrustAudio.start();
 	}
 
   
@@ -75,6 +79,19 @@ public class PlayerController : MonoBehaviour
 
 	private void SetThrusters(bool leftPlayerThrusting, bool rightPlayerThrusting)
 	{
+		if (leftPlayerThrusting && rightPlayerThrusting) 
+		{
+			thrustAudio.setParameterByName("Number of thrusters", 2);
+		} 
+		else if (leftPlayerThrusting || rightPlayerThrusting) 
+		{
+			thrustAudio.setParameterByName("Number of thrusters", 1);
+		} 
+		else if (!leftPlayerThrusting && !rightPlayerThrusting) 
+		{
+			thrustAudio.setParameterByName("Number of thrusters", 0);
+		}
+
 		if (playerEffects)
 		{
 			playerEffects.SetThrusters(leftPlayerThrusting, rightPlayerThrusting);
