@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4913314143490122}
   - component: {fileID: 212171181051715768}
   - component: {fileID: 58775019514408522}
+  - component: {fileID: 7351312113436639044}
   - component: {fileID: 114965186369722504}
   - component: {fileID: 6400504974015770166}
   m_Layer: 0
   m_Name: Space Rock
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,12 +95,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6.87
+--- !u!50 &7351312113436639044
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672830931894912}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: ed7685a8071604065ad457ef33656ecf, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &114965186369722504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +155,7 @@ MonoBehaviour:
   weightedToward0: 1
   minRrotationSpeed: -0.2
   maxRrotationSpeed: 0.2
+  rotationDirection: 2
 --- !u!1 &6027491262294309221
 GameObject:
   m_ObjectHideFlags: 0

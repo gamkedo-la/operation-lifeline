@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wreckage
   - HomeBase
+  - Rock
   layers:
   - Default
   - TransparentFX

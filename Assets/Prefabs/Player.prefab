@@ -10871,7 +10871,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.2
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -11322,15 +11322,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 748daba2544ac0140afe53bf644d7d60, type: 3}
---- !u!4 &5270426453289159584 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5742723362206970380, guid: 748daba2544ac0140afe53bf644d7d60,
-    type: 3}
-  m_PrefabInstance: {fileID: 474585054894471596}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7180928345957262310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7291847724496935498, guid: 748daba2544ac0140afe53bf644d7d60,
+    type: 3}
+  m_PrefabInstance: {fileID: 474585054894471596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5270426453289159584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5742723362206970380, guid: 748daba2544ac0140afe53bf644d7d60,
     type: 3}
   m_PrefabInstance: {fileID: 474585054894471596}
   m_PrefabAsset: {fileID: 0}

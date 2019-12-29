@@ -100,7 +100,8 @@ public class InputTest : MonoBehaviour
                 currentThrust += thrust;
             }
             else if (!rightThrusterFunctional) { rigidbody2D.angularVelocity = 0f; }
-            constantForce2D.relativeForce = new Vector2(0f, currentThrust);
+            
+            constantForce2D.relativeForce = transform.InverseTransformDirection(transform.up * currentThrust);
             constantForce2D.torque = currentTorque;
             //SetThrusters(PlayerInput.LeftThrust && leftThrusterFunctional, PlayerInput.RightThrust && rightThrusterFunctional);
             SetThrusters(leftEngineOn, rightEngineOn);
