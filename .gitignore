@@ -70,3 +70,5 @@ Assets/StreamingAssets/**/*.bank.meta
 fmod_editor.log
 
 *.meta
+Assets/Materials/HealthMeter.mat
+ProjectSettings/QualitySettings.asset

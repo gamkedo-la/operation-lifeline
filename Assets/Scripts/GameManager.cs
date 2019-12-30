@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
             return isPaused;
         }
     }
-    private Text pauseTextUI;
-    [SerializeField] private string pauseText = "GAME PAUSED";
+
+	[SerializeField] private GameObject pauseMenu;
 
     private GameObject homeBase;
     private GameObject player;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void SetPause(bool toPause = true) {
         isPaused = toPause;
-        pauseTextUI.text = isPaused ? pauseText : "";
+		pauseMenu.SetActive(toPause);
     }
 
     private void Awake() {
@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
-        pauseTextUI = GetComponentsInChildren<Text>()[0];
         progressIndicatorUI = GetComponentsInChildren<Scrollbar>()[0];
 
         InitializeScene();
