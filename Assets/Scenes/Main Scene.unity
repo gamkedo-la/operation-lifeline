@@ -419,6 +419,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 980116520829373681, guid: 8e4b8347c6f4a7a42a4a9f01030498da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4b8347c6f4a7a42a4a9f01030498da, type: 3}
 --- !u!1 &67608269
@@ -19144,6 +19149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheats
       objectReference: {fileID: 0}
+    - target: {fileID: 7432569150012142675, guid: 492cd6e6c1383d049aa6418cd8f9bc02,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7432569150012142685, guid: 492cd6e6c1383d049aa6418cd8f9bc02,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19252,12 +19262,12 @@ PrefabInstance:
     - target: {fileID: 7432569150215330810, guid: 492cd6e6c1383d049aa6418cd8f9bc02,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7432569149786459573, guid: 492cd6e6c1383d049aa6418cd8f9bc02,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492cd6e6c1383d049aa6418cd8f9bc02, type: 3}
