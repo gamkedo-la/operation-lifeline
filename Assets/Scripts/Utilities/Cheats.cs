@@ -39,4 +39,13 @@ public class Cheats : MonoBehaviour
             playerHealth.enabled = false;
         }
     }
+
+    public void KillPlayer()
+    {
+        if(playerHealth.enabled == false)
+        {
+            playerHealth.enabled = true;
+        }
+        playerHealth.Die();
+    }
 }
