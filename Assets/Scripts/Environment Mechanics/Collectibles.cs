@@ -6,8 +6,7 @@ public class Collectibles : MonoBehaviour
 {
     protected virtual void OnTriggerEnter2D(Collider2D player)
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        //Destroy(gameObject);
+       
     }
 
 }
