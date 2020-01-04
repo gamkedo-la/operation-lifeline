@@ -57,7 +57,6 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -69,6 +68,4 @@ Assets/StreamingAssets/**/*.bank
 Assets/StreamingAssets/**/*.bank.meta
 fmod_editor.log
 
-*.meta
-Assets/Materials/HealthMeter.mat
 ProjectSettings/QualitySettings.asset
