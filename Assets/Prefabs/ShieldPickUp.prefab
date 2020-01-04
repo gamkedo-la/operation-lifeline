@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 245440662283675634}
   - component: {fileID: 245440662283675646}
   - component: {fileID: 594588945}
-  - component: {fileID: 4633252034443600544}
+  - component: {fileID: 79682412202188477}
   m_Layer: 0
   m_Name: ShieldPickUp
   m_TagString: Untagged
@@ -89,7 +89,7 @@ MonoBehaviour:
   minRrotationSpeed: -0.3
   maxRrotationSpeed: 0.3
   rotationDirection: 0
---- !u!114 &4633252034443600544
+--- !u!114 &79682412202188477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 245440662283675640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f08e5ad4377184d9f97cf259faa38e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fcca3debe8c240f0bc2325324fda191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shieldPrefab: {fileID: 5349461574696457445, guid: dcd107d17a07a614a9ae91fb005eb610,
@@ -239,7 +239,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2be49c7d3a00af488e1355602eb5797, type: 2}
+  - {fileID: 2100000, guid: 1328eb4b920ea4a5ea5ceca1b15d0714, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
