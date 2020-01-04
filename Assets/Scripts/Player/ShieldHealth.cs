@@ -16,8 +16,7 @@ public class ShieldHealth : MonoBehaviour, IDamageable
         {
             playerHealth = GetComponentInParent<PlayerHealth>();
             playerHealth.enabled = false;
-        }
-        
+        }        
     }
 
     public void Die()
@@ -27,8 +26,7 @@ public class ShieldHealth : MonoBehaviour, IDamageable
     }
 
     public void TakeDamage(int damage)
-    {
-        Debug.Log("shield takes" + damage + "damage");
+    {        
         health -= damage;
         if(health <= 0)
         {
