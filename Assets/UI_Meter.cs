@@ -50,6 +50,7 @@ public class UI_Meter : MonoBehaviour
 
     void Update()
     {
+		if (!player) { return; }
 		timeUntilDeath = Mathf.Clamp(timeUntilDeath - Time.deltaTime, 0f, startingTimeUntilDeath);
 		if (textETD) { textETD.text = timeUntilDeath.ToString(); }
 		percentETD = timeUntilDeath / startingTimeUntilDeath;

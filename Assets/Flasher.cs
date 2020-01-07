@@ -16,8 +16,6 @@ public class Flasher : MonoBehaviour
 	{
 		red = redParticles.main.startColor.color;
 		blue = blueParticles.main.startColor.color;
-		Debug.Log("Red Starting Color :" + red);
-		Debug.Log("Blue Starting Color :" + blue);
 	}
 	void Update()
     {

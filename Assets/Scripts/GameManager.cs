@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     
     private IEnumerator playerPositionUpdate() {
         while (true) {
+			if (!player) { break; }
             Vector3 playerCurrentPosition = player.transform.position;
             progressIndicatorUI.value = playerCurrentPosition.y / totalJourneyDistanceThisLevel;
 

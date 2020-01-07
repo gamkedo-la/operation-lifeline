@@ -20,18 +20,17 @@ public class HurtPlayer : MonoBehaviour
         playerShakeScript = player.GetComponent<PlayerShake>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
 		if (damageOnImpact > 0)
 		{
-			InflictDamage(other, damageOnImpact);
-			Explode();
+			InflictDamage(collision.collider, damageOnImpact);
             if(playerShakeScript != null)
             {
                 playerShakeScript.ShakeMe();
             }
         }
-		if (destroyedOnImpact) { SelfDestruct(); }
+		if (destroyedOnImpact) { Explode(); SelfDestruct(); }
 	}
 
 	void OnTriggerStay2D(Collider2D other)
