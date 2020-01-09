@@ -9,12 +9,13 @@ public class SpeedUp : Collectibles
     public float cooldown = 5f;
     float originalThrust;
 
-    protected override void OnTriggerEnter2D(Collider2D player)
+    protected override void OnTriggerEnter2D(Collider2D collider)
     {
-        playerController = player.GetComponent<PlayerController>();
+
+        base.OnTriggerEnter2D(collider);
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         originalThrust = playerController.thrust;
-        playerController.thrust *= thrustMultiplier;
-        base.OnTriggerEnter2D(player);
+        playerController.thrust *= thrustMultiplier;        
         StartCoroutine(Cooldown());
         
     }

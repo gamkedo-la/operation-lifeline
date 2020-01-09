@@ -10923,7 +10923,6 @@ MonoBehaviour:
   deathParticlePrefab: {fileID: 1839428532327440, guid: 8828e0a00da54654eb0d1938be51c083,
     type: 3}
   lifeLine: {fileID: 4825722243677165232}
-  tryAgainButton: {fileID: 0}
 --- !u!114 &3067926702452503036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11322,15 +11321,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 748daba2544ac0140afe53bf644d7d60, type: 3}
---- !u!4 &7180928345957262310 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7291847724496935498, guid: 748daba2544ac0140afe53bf644d7d60,
-    type: 3}
-  m_PrefabInstance: {fileID: 474585054894471596}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5270426453289159584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5742723362206970380, guid: 748daba2544ac0140afe53bf644d7d60,
+    type: 3}
+  m_PrefabInstance: {fileID: 474585054894471596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7180928345957262310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7291847724496935498, guid: 748daba2544ac0140afe53bf644d7d60,
     type: 3}
   m_PrefabInstance: {fileID: 474585054894471596}
   m_PrefabAsset: {fileID: 0}

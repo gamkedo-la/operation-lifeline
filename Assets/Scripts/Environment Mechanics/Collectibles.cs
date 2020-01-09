@@ -6,7 +6,7 @@ public class Collectibles : MonoBehaviour
 {
     protected virtual void OnTriggerEnter2D(Collider2D player)
     {
-       
+        Debug.Log(gameObject + "Collided with Player");
     }
 
 }
