@@ -33,6 +33,14 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RepairLifeSupport"",
+                    ""type"": ""Button"",
+                    ""id"": ""bfef92a7-f599-47df-a559-61a44fa008cc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -57,6 +65,17 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
                     ""action"": ""RightEngineOn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9cf26945-cad6-4224-af17-65f16534bbaf"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RepairLifeSupport"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -79,6 +98,7 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
         m_PlayerActionMap = asset.FindActionMap("PlayerActionMap", throwIfNotFound: true);
         m_PlayerActionMap_LeftEngineOn = m_PlayerActionMap.FindAction("LeftEngineOn", throwIfNotFound: true);
         m_PlayerActionMap_RightEngineOn = m_PlayerActionMap.FindAction("RightEngineOn", throwIfNotFound: true);
+        m_PlayerActionMap_RepairLifeSupport = m_PlayerActionMap.FindAction("RepairLifeSupport", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -130,12 +150,14 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
     private IPlayerActionMapActions m_PlayerActionMapActionsCallbackInterface;
     private readonly InputAction m_PlayerActionMap_LeftEngineOn;
     private readonly InputAction m_PlayerActionMap_RightEngineOn;
+    private readonly InputAction m_PlayerActionMap_RepairLifeSupport;
     public struct PlayerActionMapActions
     {
         private @AstroLanceInput m_Wrapper;
         public PlayerActionMapActions(@AstroLanceInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @LeftEngineOn => m_Wrapper.m_PlayerActionMap_LeftEngineOn;
         public InputAction @RightEngineOn => m_Wrapper.m_PlayerActionMap_RightEngineOn;
+        public InputAction @RepairLifeSupport => m_Wrapper.m_PlayerActionMap_RepairLifeSupport;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -151,6 +173,9 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
                 @RightEngineOn.started -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOn;
                 @RightEngineOn.performed -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOn;
                 @RightEngineOn.canceled -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRightEngineOn;
+                @RepairLifeSupport.started -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRepairLifeSupport;
+                @RepairLifeSupport.performed -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRepairLifeSupport;
+                @RepairLifeSupport.canceled -= m_Wrapper.m_PlayerActionMapActionsCallbackInterface.OnRepairLifeSupport;
             }
             m_Wrapper.m_PlayerActionMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -161,6 +186,9 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
                 @RightEngineOn.started += instance.OnRightEngineOn;
                 @RightEngineOn.performed += instance.OnRightEngineOn;
                 @RightEngineOn.canceled += instance.OnRightEngineOn;
+                @RepairLifeSupport.started += instance.OnRepairLifeSupport;
+                @RepairLifeSupport.performed += instance.OnRepairLifeSupport;
+                @RepairLifeSupport.canceled += instance.OnRepairLifeSupport;
             }
         }
     }
@@ -178,5 +206,6 @@ public class @AstroLanceInput : IInputActionCollection, IDisposable
     {
         void OnLeftEngineOn(InputAction.CallbackContext context);
         void OnRightEngineOn(InputAction.CallbackContext context);
+        void OnRepairLifeSupport(InputAction.CallbackContext context);
     }
 }

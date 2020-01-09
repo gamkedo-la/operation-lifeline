@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpeedUp : Collectibles
+
 {
     private PlayerController playerController;
     public float thrustMultiplier = 1.2f;
