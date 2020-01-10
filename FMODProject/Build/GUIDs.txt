@@ -1,0 +1,14 @@
+{df380b84-d467-4373-a233-82f74c7ddea5} bank:/Master
+{47252b50-a51c-0f31-247a-0809bd8ed83d} bank:/Master.strings
+{4d1c6c66-60c5-47aa-ac68-5186d978b968} bus:/
+{5838fb75-31ee-46b6-bd80-6a6fcbb51836} bus:/Reverb
+{0c8a51f7-cc19-435a-ab82-3ecc2e4a6467} event:/Main/Background Tracks/stebsBackgroundMusic
+{4896f32c-c8ca-4194-9ceb-6885e35c9ff2} event:/Main/Player/Engine
+{ac13fcca-d3fc-44ef-86bf-633a51f23d1e} event:/Main/Player/Impact
+{e3f57d9c-3c4f-49f8-928f-9b925c41619d} event:/Main/Player/Thrust
+{09d445bc-4f1c-4960-a933-2b1228e347bf} event:/Main/Player/WaterSplash
+{4fc927fe-d0d0-45cc-bda3-40d53cce2d01} event:/Main/UI/Menu Navigation
+{74d61be9-6999-4fe0-a9bd-13ca3359311f} event:/Main/UI/Menu Selection
+{3d43769b-be47-4744-b448-7455d6a22ec9} event:/Test/Test_Event
+{ee206af5-e5e4-4c0f-b004-7a0b7aea80db} parameter:/Number of thrusters
+{e90740c3-04da-457d-b5c5-4f4ea66ab6da} parameter:/Under water
