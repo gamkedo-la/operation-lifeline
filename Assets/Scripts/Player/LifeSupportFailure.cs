@@ -18,7 +18,7 @@ public class LifeSupportFailure : MonoBehaviour
     private float repairStatus = 20;
 
     [SerializeField]
-    private Slider lifeSupportRepairLevel;
+    private Slider lifeSupportRepairLevel; //Link to UI Slider used for Life Support Failure
 
     [SerializeField]
     private float lifeSupportLossRate = 1;
@@ -27,6 +27,7 @@ public class LifeSupportFailure : MonoBehaviour
 
     private void OnEnable()
     {
+        lifeSupportRepairLevel.gameObject.SetActive(true);
         lifeSupportRepairLevel.value = 10;
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
@@ -43,12 +44,14 @@ public class LifeSupportFailure : MonoBehaviour
         }
     }
 
-    public void RegainLife(InputAction.CallbackContext context)
+    public void RegainLife(InputAction.CallbackContext context) //Unity's New Input system syntax
     {
         repairStatus += 10;
         if(repairStatus > 100f)
         {
-            repairStatus = 100f;
+            //Trigger success
+            lifeSupportRepairLevel.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 
