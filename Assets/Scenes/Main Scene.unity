@@ -1713,6 +1713,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282605541}
   m_CullTransparentMesh: 0
+--- !u!1 &285055370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1403975872001289218, guid: c6bea7b2a62f575a7b99b6e10ce4f478,
+    type: 3}
+  m_PrefabInstance: {fileID: 1403975871889314942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &285055371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285055370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Main/Background Tracks/stebsBackgroundMusic
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!4 &327347145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4913314143490122, guid: b646e59dacacd3145b1f6d39bc348dc2,
@@ -3145,7 +3174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 321.97, y: -170.14001}
+  m_AnchoredPosition: {x: 321.97, y: -170.13998}
   m_SizeDelta: {x: -635.97, y: -333.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789467526
