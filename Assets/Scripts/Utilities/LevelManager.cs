@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
-{  
+{
 
-    public void LoadScene(string sceneToLoad)
+    public void LoadSceneByName(string sceneToLoad)
     {
         GameManager.Instance.LoadScene(sceneToLoad);
     }
