@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{cadd3d81-01ae-4927-a884-85c5b0d49b5a}">
+		<property name="assetPath">
+			<value>MIss7.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0710204081632653</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{644e2e2a-23e7-4dda-ac31-639e66ada9ec}</destination>
+		</relationship>
+	</object>
+</objects>

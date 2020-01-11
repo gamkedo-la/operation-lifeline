@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{7095b896-0cbc-4ab4-9fc7-144df909e3d0}">
+		<property name="assetPath">
+			<value>MIss0b.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.67918367346938779</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{644e2e2a-23e7-4dda-ac31-639e66ada9ec}</destination>
+		</relationship>
+	</object>
+</objects>
