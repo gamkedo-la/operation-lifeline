@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
@@ -54,10 +55,9 @@ public class GameManager : MonoBehaviour
         InitializeScene();
     }
 
-    private void Start() {
-        progressIndicatorUI = GetComponentsInChildren<Scrollbar>()[0];
-
-        InitializeScene();
+    private void Start() {   
+            progressIndicatorUI = GetComponentsInChildren<Scrollbar>()[0];
+            InitializeScene();     
     }
 
     private void InitializeScene() {
