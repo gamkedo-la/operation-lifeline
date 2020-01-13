@@ -20,25 +20,25 @@ public class ChangeMaterials : MonoBehaviour
 
     public void RaiseMaterialIndex()
     {
-        if(materialIndex < materials.Length)
+        if(materialIndex == materials.Length-1)
         {
-            materialIndex += 1;
+            materialIndex = 0;
         }
         else
         {
-            materialIndex = 0;
+            materialIndex += 1;
         }
         ChangeMaterial();
     }
     public void LowerMaterialIndex()
     {
-        if (materialIndex > 0)
+        if (materialIndex == 0)
         {
-            materialIndex -= 1;
+            materialIndex = materials.Length-1;
         }
         else
         {
-            materialIndex = materials.Length;
+            materialIndex -= 1;
         }
         ChangeMaterial();
     }
