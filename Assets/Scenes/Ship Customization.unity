@@ -347,9 +347,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 569413295}
-  - {fileID: 656383602}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &408792006
 MonoBehaviour:
@@ -501,17 +500,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 590085fc6ac60c645ba45ea88b00bdb2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1760426
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 590085fc6ac60c645ba45ea88b00bdb2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1422092
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 590085fc6ac60c645ba45ea88b00bdb2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.2196107
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 590085fc6ac60c645ba45ea88b00bdb2,
         type: 3}
@@ -595,12 +594,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656383601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 408792005}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &656383603
 Light:
@@ -698,7 +697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: -160}
+  m_AnchoredPosition: {x: 0, y: -160}
   m_SizeDelta: {x: 296.6, y: 53.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &786715690
@@ -1382,7 +1381,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
