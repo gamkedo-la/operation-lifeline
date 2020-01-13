@@ -9,9 +9,14 @@ public class ChangeMaterials : MonoBehaviour
     private MeshRenderer modelMeshRenderer;
 
     [SerializeField]
-    private Material[] materials;
+    public Material[] materials;
 
-    private int materialIndex = 0;
+    public int materialIndex = 0;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     public void RaiseMaterialIndex()
     {

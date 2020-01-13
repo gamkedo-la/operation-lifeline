@@ -514,6 +514,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: astrolance2
       objectReference: {fileID: 0}
+    - target: {fileID: -4540532766909133296, guid: 590085fc6ac60c645ba45ea88b00bdb2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b7e825c61bc3252448eff27ceb29fdef, type: 2}
     - target: {fileID: -4216859302048453862, guid: 590085fc6ac60c645ba45ea88b00bdb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -570,11 +575,6 @@ PrefabInstance:
       value: 25.808
       objectReference: {fileID: 0}
     - target: {fileID: 5077469506249321145, guid: 590085fc6ac60c645ba45ea88b00bdb2,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b7e825c61bc3252448eff27ceb29fdef, type: 2}
-    - target: {fileID: -4540532766909133296, guid: 590085fc6ac60c645ba45ea88b00bdb2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -761,7 +761,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6052340}
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneByName
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -943,6 +943,7 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: b7e825c61bc3252448eff27ceb29fdef, type: 2}
   - {fileID: 2100000, guid: ddeb9ca710157974980472f008e0b651, type: 2}
+  materialIndex: 0
 --- !u!4 &1037833669
 Transform:
   m_ObjectHideFlags: 0
