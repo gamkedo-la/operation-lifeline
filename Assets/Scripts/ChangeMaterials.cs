@@ -5,6 +5,21 @@ using UnityEngine;
 public class ChangeMaterials : MonoBehaviour
 {
 
+    private static ChangeMaterials _instance;
+    public static ChangeMaterials Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<ChangeMaterials>();
+                DontDestroyOnLoad(_instance.gameObject);
+            }
+
+            return _instance;
+        }
+    }
+
     [SerializeField]
     private MeshRenderer modelMeshRenderer;
 
@@ -15,7 +30,16 @@ public class ChangeMaterials : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            if (this != _instance)
+                Destroy(gameObject);
+        }
     }
 
     public void RaiseMaterialIndex()
