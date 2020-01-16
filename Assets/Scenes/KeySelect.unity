@@ -1230,6 +1230,17 @@ MonoBehaviour:
           m_StringArgument: Main Scene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1966794927}
+        m_MethodName: uiSoundOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &801972800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,6 +2652,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4f1c62526dfea9878da573a7307dbcb, type: 3}
+--- !u!114 &1966794927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8548064276181694504, guid: b4f1c62526dfea9878da573a7307dbcb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1966794926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef4cf05be98604fea3527ae7fd9d30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2062477512
 GameObject:
   m_ObjectHideFlags: 0

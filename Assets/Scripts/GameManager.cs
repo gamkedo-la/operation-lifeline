@@ -90,4 +90,14 @@ public class GameManager : MonoBehaviour
 
         return distance;
     }
+
+	public void uiSoundOnHover() 
+	{
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/UI/Menu Navigation");
+	}
+
+	public void uiSoundOnClick() 
+	{
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/UI/Menu Selection");
+	}
 }
