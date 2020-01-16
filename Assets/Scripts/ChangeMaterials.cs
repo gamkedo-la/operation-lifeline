@@ -6,19 +6,7 @@ public class ChangeMaterials : MonoBehaviour
 {
 
     private static ChangeMaterials _instance;
-    public static ChangeMaterials Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<ChangeMaterials>();
-                DontDestroyOnLoad(_instance.gameObject);
-            }
-
-            return _instance;
-        }
-    }
+    public static ChangeMaterials Instance { get; }
 
     [SerializeField]
     private MeshRenderer modelMeshRenderer;
@@ -28,17 +16,17 @@ public class ChangeMaterials : MonoBehaviour
 
     public int materialIndex = 0;
 
-    private void Awake()
+    void Awake()
     {
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(_instance.gameObject);
         }
         else
         {
-            if (this != _instance)
-                Destroy(gameObject);
+            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 
