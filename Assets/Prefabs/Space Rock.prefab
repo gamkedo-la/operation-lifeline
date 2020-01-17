@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114965186369722504}
   - component: {fileID: 6400504974015770166}
   - component: {fileID: -7075210560244157658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Space Rock
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 1770364098815375400}
   - component: {fileID: 171205560670380134}
   - component: {fileID: 1112820573495236056}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,6 +260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Impact Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468605595699998100, guid: 4bd80ec16f6e5d44c9167d4ee64b912f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2915771561740559940, guid: 4bd80ec16f6e5d44c9167d4ee64b912f,
         type: 3}

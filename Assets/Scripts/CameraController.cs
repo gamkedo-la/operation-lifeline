@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
     public float smoothing; //allows for a less jumpy camera when the target object "turns around"
 
     public bool followTarget;
+	private float playerTrackDistance = 150f;
 
     // Use this for initialization
     void Start()
@@ -29,13 +30,10 @@ public class CameraController : MonoBehaviour
 
         if (target && followTarget)
         {
-            targetPosition = new Vector3(transform.position.x, target.transform.position.y, transform.position.z);
-
-            
-                targetPosition = new Vector3(targetPosition.x, targetPosition.y + followAhead, targetPosition.z);
-            
-
-            // transform.position = targetPosition;
+			var x = transform.position.x;
+			x = Mathf.Clamp(x, target.transform.position.x - playerTrackDistance, target.transform.position.x + playerTrackDistance);
+			//targetPosition = new Vector3(transform.position.x, target.transform.position.y, transform.position.z);
+			targetPosition = new Vector3(x, target.transform.position.y + followAhead, transform.position.z);
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
         }
