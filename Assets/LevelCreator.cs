@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelCreator : MonoBehaviour
 {
@@ -13,12 +14,15 @@ public class LevelCreator : MonoBehaviour
 	[SerializeField] GameObject leftBoundary;
 	[SerializeField] GameObject rockPrefab;
 	[SerializeField] GameObject hospital;
+	[SerializeField] string starsScene;
+	
 	List<GameObject> rocks = new List<GameObject>();
 	float rockRadius = 50f;
 	int currentRockAmt= 0;
 
 	void Start()
     {
+		LoadStars();
 		float x = width / 2;
 		float midY = height / 2;
 		rightBoundary.transform.position = new Vector3(x, midY, 0f);
@@ -42,10 +46,12 @@ public class LevelCreator : MonoBehaviour
 		} while (currentRockAmt < amtRocks);
 	}
 
-    // Update is called once per frame
-    void Update()
+    void LoadStars()
     {
-        
+        if (!SceneManager.GetSceneByName(starsScene).isLoaded)
+		{
+			SceneManager.LoadScene(starsScene, LoadSceneMode.Additive);
+		}
     }
 
 	private void MakeRock()
