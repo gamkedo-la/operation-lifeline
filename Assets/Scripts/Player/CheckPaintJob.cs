@@ -12,8 +12,10 @@ public class CheckPaintJob : MonoBehaviour
     void Awake()
     {
         changeMaterials = FindObjectOfType<ChangeMaterials>();
-
-        playerModel.material = changeMaterials.materials[changeMaterials.materialIndex];
+		if (changeMaterials)
+		{
+			playerModel.material = changeMaterials.materials[changeMaterials.materialIndex];
+		}
     }
 
 
