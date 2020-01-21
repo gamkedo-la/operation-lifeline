@@ -51,11 +51,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single) {
-        SceneManager.LoadScene(sceneName, mode);
-        InitializeScene();
+
+        StartCoroutine(MoveToScene(sceneName, LoadSceneMode.Single));
+        /*SceneManager.LoadScene(sceneName, mode);
+        InitializeScene();*/
     }
 
-    private void Start() {   
+    private void Start() {  
             progressIndicatorUI = GetComponentsInChildren<Scrollbar>()[0];
             InitializeScene();     
     }
@@ -68,6 +70,22 @@ public class GameManager : MonoBehaviour
         if (homeBase && player) {
             StopCoroutine(playerPositionUpdate());
             StartCoroutine(playerPositionUpdate());
+        }
+    }
+
+    private IEnumerator MoveToScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
+    {
+        yield return new WaitForSeconds(1);
+        if (RuntimeManager.HasBankLoaded("Master"))
+        {
+            SceneManager.LoadScene(sceneName, mode);
+            InitializeScene();
+
+            yield return null;
+        }
+        else
+        {
+            StartCoroutine(MoveToScene(sceneName, LoadSceneMode.Single));
         }
     }
     
