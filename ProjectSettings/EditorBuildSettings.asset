@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Workshop.unity
     guid: 94b74d7869aa43343948b4d7432cdc06
+  - enabled: 1
+    path: Assets/Scenes/Stars.unity
+    guid: c4926f20b68eedb498de0df7788763d3
   m_configObjects: {}
