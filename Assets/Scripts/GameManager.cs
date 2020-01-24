@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator MoveToScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
     {
         yield return new WaitForSeconds(1);
+        
         if (RuntimeManager.HasBankLoaded("Master"))
         {
             SceneManager.LoadScene(sceneName, mode);

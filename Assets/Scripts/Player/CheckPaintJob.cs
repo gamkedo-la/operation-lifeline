@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CheckPaintJob : MonoBehaviour
 {
-    private ChangeMaterials changeMaterials;
+    private CurrentPaintJob currentPaintJob;
 
     [SerializeField]
     private MeshRenderer playerModel;
 
     void Awake()
     {
-        changeMaterials = FindObjectOfType<ChangeMaterials>();
-		if (changeMaterials)
+        currentPaintJob = FindObjectOfType<CurrentPaintJob>();
+		if (currentPaintJob)
 		{
-			playerModel.material = changeMaterials.materials[changeMaterials.materialIndex];
+            playerModel.material = currentPaintJob.paintJob;
 		}
     }
 

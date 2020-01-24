@@ -5,8 +5,8 @@ using UnityEngine;
 public class ChangeMaterials : MonoBehaviour
 {
 
-    private static ChangeMaterials _instance;
-    public static ChangeMaterials Instance { get; }
+   /* private static ChangeMaterials _instance;
+    public static ChangeMaterials Instance { get; }*/
 
     [SerializeField]
     private MeshRenderer modelMeshRenderer;
@@ -16,17 +16,15 @@ public class ChangeMaterials : MonoBehaviour
 
     public int materialIndex = 0;
 
+    [SerializeField]
+    private CurrentPaintJob currentPaintJob;
+
     void Awake()
     {
-        if (_instance == null)
+        currentPaintJob = FindObjectOfType<CurrentPaintJob>();
+        if (currentPaintJob.changeMaterials == null)
         {
-            _instance = this;
-            DontDestroyOnLoad(_instance.gameObject);
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-            Destroy(this.gameObject);
+            currentPaintJob.changeMaterials = this;
         }
     }
 
@@ -58,6 +56,8 @@ public class ChangeMaterials : MonoBehaviour
 
     public void ChangeMaterial()
     {
+
+
         modelMeshRenderer.material = materials[materialIndex];
     }
 }
