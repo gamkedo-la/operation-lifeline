@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CamZoom : MonoBehaviour
 {
-	[SerializeField] private Rigidbody2D targetRigidbody;
+	[SerializeField] private Rigidbody2D targetRigidbody = null;
 	private float zoomSpeed = 50f;
 	private float zoomPercent;
 	private float velSq;

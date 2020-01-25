@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnImpactDust : MonoBehaviour
 {
-	[SerializeField] ParticleSystem impactEffect;
+	[SerializeField] ParticleSystem impactEffect = null;
 	private bool shouldBePlaying = false;
 
 	private void Awake()

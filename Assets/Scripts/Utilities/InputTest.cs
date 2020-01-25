@@ -12,7 +12,7 @@ public class InputTest : MonoBehaviour
     private AstroLanceInput astroLanceInput;    
 
     private enum FlightMode { Newtonian, Direct }
-    [SerializeField] private FlightMode flightMode;
+    [SerializeField] private FlightMode flightMode = FlightMode.Direct;
     public float thrust = 10f;
     public float leftPlayerTorque = -1f;
     public float rightPlayerTorque = 1f;
@@ -23,9 +23,8 @@ public class InputTest : MonoBehaviour
     Vector2 savedVelocity = Vector2.zero;
     float savedAnguarVelocity = 0;
 
-    Rigidbody2D rigidbody2D;
-    RigidbodyConstraints2D rigidbodyConstraints2D;
-    [SerializeField] private PlayerEffects playerEffects;
+    Rigidbody2D rbody2D;
+    [SerializeField] private PlayerEffects playerEffects = null;
 /*
     private void OnEnable()
     {
@@ -63,8 +62,7 @@ public class InputTest : MonoBehaviour
     void Start()
     {
         constantForce2D = GetComponent<ConstantForce2D>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        rigidbodyConstraints2D = new RigidbodyConstraints2D();
+        rbody2D = GetComponent<Rigidbody2D>();
     }
 
 
@@ -74,32 +72,32 @@ public class InputTest : MonoBehaviour
 
         if (!GameManager.Instance.IsPaused)
         {
-            if (rigidbody2D.constraints != RigidbodyConstraints2D.None)
+            if (rbody2D.constraints != RigidbodyConstraints2D.None)
             {
                 constantForce2D.relativeForce = savedRelativeForce;
                 constantForce2D.torque = savedTorque;
-                rigidbody2D.velocity = savedVelocity;
-                rigidbody2D.angularVelocity = savedAnguarVelocity;
+                rbody2D.velocity = savedVelocity;
+                rbody2D.angularVelocity = savedAnguarVelocity;
             }
 
-            rigidbody2D.constraints = RigidbodyConstraints2D.None;
+            rbody2D.constraints = RigidbodyConstraints2D.None;
 
             float currentThrust = thrust * 0.5f;
             float currentTorque = 0f;
-            bool leftThrusterFunctional = (flightMode != FlightMode.Direct || rigidbody2D.rotation > -60f || rigidbody2D.rotation > 300f);
-            bool rightThrusterFunctional = (flightMode != FlightMode.Direct || rigidbody2D.rotation < 60f || rigidbody2D.rotation < -300f);
+            bool leftThrusterFunctional = (flightMode != FlightMode.Direct || rbody2D.rotation > -60f || rbody2D.rotation > 300f);
+            bool rightThrusterFunctional = (flightMode != FlightMode.Direct || rbody2D.rotation < 60f || rbody2D.rotation < -300f);
             if (leftEngineOn && leftThrusterFunctional)
             {
                 currentTorque += leftPlayerTorque;
                 currentThrust += thrust;
             }
-            else if (!leftThrusterFunctional) { rigidbody2D.angularVelocity = 0f; }
+            else if (!leftThrusterFunctional) { rbody2D.angularVelocity = 0f; }
             if (rightEngineOn && rightThrusterFunctional)
             {
                 currentTorque += rightPlayerTorque;
                 currentThrust += thrust;
             }
-            else if (!rightThrusterFunctional) { rigidbody2D.angularVelocity = 0f; }
+            else if (!rightThrusterFunctional) { rbody2D.angularVelocity = 0f; }
             
             constantForce2D.relativeForce = transform.InverseTransformDirection(transform.up * currentThrust);
             constantForce2D.torque = currentTorque;
@@ -108,12 +106,12 @@ public class InputTest : MonoBehaviour
 
             savedRelativeForce = constantForce2D.relativeForce;
             savedTorque = constantForce2D.torque;
-            savedVelocity = rigidbody2D.velocity;
-            savedAnguarVelocity = rigidbody2D.angularVelocity;
+            savedVelocity = rbody2D.velocity;
+            savedAnguarVelocity = rbody2D.angularVelocity;
         }
         else
         {
-            rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            rbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 

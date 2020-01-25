@@ -9,15 +9,15 @@ public class ChangeMaterials : MonoBehaviour
     public static ChangeMaterials Instance { get; }*/
 
     [SerializeField]
-    private MeshRenderer modelMeshRenderer;
+    private MeshRenderer modelMeshRenderer = null;
 
     [SerializeField]
-    public Material[] materials;
+    public Material[] materials = null;
 
     public int materialIndex = 0;
 
     [SerializeField]
-    private CurrentPaintJob currentPaintJob;
+    private CurrentPaintJob currentPaintJob = null;
 
     void Awake()
     {

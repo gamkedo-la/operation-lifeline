@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-	[SerializeField] private Transform target;
+	[SerializeField] private Transform target = null;
 	Vector3 newPosition = Vector3.zero;
 
 	private void LateUpdate()

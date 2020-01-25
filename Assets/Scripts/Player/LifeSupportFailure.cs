@@ -18,7 +18,7 @@ public class LifeSupportFailure : MonoBehaviour
     private float repairStatus = 20;
 
     [SerializeField]
-    private Slider lifeSupportRepairLevel; //Link to UI Slider used for Life Support Failure
+    private Slider lifeSupportRepairLevel = null; //Link to UI Slider used for Life Support Failure
 
     [SerializeField]
     private float lifeSupportLossRate = 1;

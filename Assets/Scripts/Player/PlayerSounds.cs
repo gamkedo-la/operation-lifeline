@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerSounds : MonoBehaviour
 {
 
-	[SerializeField] private AudioSource thrusterAudioSource;
-	[SerializeField] private AudioClip thrusterSound;
+	[SerializeField] private AudioSource thrusterAudioSource = null;
+	[SerializeField] private AudioClip thrusterSound = null;
 	[Range(0f, 100f)] public float thrusterVolume = 50f;
 
 

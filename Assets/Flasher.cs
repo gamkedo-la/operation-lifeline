@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Flasher : MonoBehaviour
 {
-	[SerializeField] private Light lightAura;
-	[SerializeField] private ParticleSystem redParticles;
-	[SerializeField] private ParticleSystem blueParticles;
+	[SerializeField] private Light lightAura = null;
+	[SerializeField] private ParticleSystem redParticles = null;
+	[SerializeField] private ParticleSystem blueParticles = null;
 	private Color red;
 	private Color blue;
 	private float redAlpha;

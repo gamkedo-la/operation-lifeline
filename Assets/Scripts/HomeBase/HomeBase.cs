@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HomeBase : MonoBehaviour
 {
-    [SerializeField] private string nextLevelSceneName;
+    [SerializeField] private string nextLevelSceneName = null;
     private BoxCollider2D colHomeBase;    
 
     // Start is called before the first frame update

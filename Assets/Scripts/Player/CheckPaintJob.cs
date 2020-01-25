@@ -7,7 +7,7 @@ public class CheckPaintJob : MonoBehaviour
     private CurrentPaintJob currentPaintJob;
 
     [SerializeField]
-    private MeshRenderer playerModel;
+    private MeshRenderer playerModel = null;
 
     void Awake()
     {

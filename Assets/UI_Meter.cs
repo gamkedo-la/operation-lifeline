@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UI_Meter : MonoBehaviour
 {
 	Transform player;
-	[SerializeField] Image border;
-	[SerializeField] Transform destination;
+	[SerializeField] Image border = null;
+	[SerializeField] Transform destination = null;
 	[SerializeField] float startingTimeUntilDeath = 100f;
 	float startingDistance;
 	[SerializeField] float arrivalDistance = 2.8f;
@@ -15,17 +15,17 @@ public class UI_Meter : MonoBehaviour
 	float currentDistance;
 	float percentETA;
 	float percentETD;
-	[SerializeField] Image knobETA;
-	[SerializeField] Image knobETD;
+	[SerializeField] Image knobETA = null;
+	[SerializeField] Image knobETD = null;
 	Vector3 rotationETA;
 	Vector3 rotationETD;
 	Rigidbody2D rb;
 	float timeUntilArrival;
 	float vel;
 	float minVelValue = 1f;
-	[SerializeField] Slider speedIndicator;
-	[SerializeField] Image speedFillBar;
-	[SerializeField] Text textETD;
+	[SerializeField] Slider speedIndicator = null;
+	[SerializeField] Image speedFillBar = null;
+	[SerializeField] Text textETD = null;
 
     void Start()
     {

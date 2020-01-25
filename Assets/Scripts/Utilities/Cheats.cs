@@ -12,7 +12,7 @@ public class Cheats : MonoBehaviour
     public bool infiniteHealth = false;
 
     [SerializeField]
-    private Slider speedSlider;
+    private Slider speedSlider = null;
     // Start is called before the first frame update
     void Awake()
     {

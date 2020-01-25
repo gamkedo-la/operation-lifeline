@@ -10,11 +10,11 @@ public class LevelCreator : MonoBehaviour
 	[SerializeField] float width = 488 * 2;
 	[SerializeField] int amtRocks = 22;
 	[Header("References")]
-	[SerializeField] GameObject rightBoundary;
-	[SerializeField] GameObject leftBoundary;
-	[SerializeField] GameObject rockPrefab;
-	[SerializeField] GameObject hospital;
-	[SerializeField] string starsScene;
+	[SerializeField] GameObject rightBoundary = null;
+	[SerializeField] GameObject leftBoundary = null;
+	[SerializeField] GameObject rockPrefab = null;
+	[SerializeField] GameObject hospital = null;
+	[SerializeField] string starsScene = null;
 	
 	List<GameObject> rocks = new List<GameObject>();
 	float rockRadius = 50f;

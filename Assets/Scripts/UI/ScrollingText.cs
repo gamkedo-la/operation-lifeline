@@ -8,8 +8,8 @@ public class ScrollingText : MonoBehaviour
 	private bool scrolling = true;
 	private float scrollingSpeed = 0.25f;
 	private float arrivalThreshold = 0.1f;
-	[SerializeField] Transform startPoint;
-	[SerializeField] Transform endPoint;
+	[SerializeField] Transform startPoint = null;
+	[SerializeField] Transform endPoint = null;
 	private float timer = 0;
 	private float timerStopValue = 0.78f;
 	private float timerStartValue = 0.25f;

@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class MapButton : MonoBehaviour
 {
     [SerializeField]
-    GameObject gameObjectToMap;
+    GameObject gameObjectToMap = null;
 
     [SerializeField]
-    string gameObjectName;
+    string gameObjectName = "";
 
-    [SerializeField]
-    private Button thisButton;
-    // Start is called before the first frame update
+    //[SerializeField]
+    //private Button thisButton = null;
+    
     void Start()
     {
         gameObjectToMap = GameObject.Find(gameObjectName);
