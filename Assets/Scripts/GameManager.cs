@@ -57,9 +57,12 @@ public class GameManager : MonoBehaviour
         InitializeScene();*/
     }
 
-    private void Start() {  
-            progressIndicatorUI = GetComponentsInChildren<Scrollbar>()[0];
-            InitializeScene();     
+	private void Start() {
+		var scrollbarsInChildren = GetComponentsInChildren<Scrollbar>();
+		if (scrollbarsInChildren.Length > 0) {
+			progressIndicatorUI = GetComponentsInChildren<Scrollbar>()[0];
+		}
+        InitializeScene();     
     }
 
     private void InitializeScene() {
@@ -94,8 +97,10 @@ public class GameManager : MonoBehaviour
         while (true) {
 			if (!player) { break; }
             Vector3 playerCurrentPosition = player.transform.position;
-            progressIndicatorUI.value = playerCurrentPosition.y / totalJourneyDistanceThisLevel;
-
+			if (progressIndicatorUI)
+			{
+				progressIndicatorUI.value = playerCurrentPosition.y / totalJourneyDistanceThisLevel;
+			}
             yield return new WaitForSeconds(progressIndicatorUpdateInterval);
         }
     }
