@@ -7,26 +7,34 @@ public class PlayerController : MonoBehaviour
 	private enum FlightMode { Newtonian, Direct }
 	[SerializeField] private FlightMode flightMode = FlightMode.Direct;
     public float thrust = 10f;
-    public float leftPlayerTorque = -1f;
-    public float rightPlayerTorque = 1f;
+    public float leftPlayerTorque = -0.5f;
+    public float rightPlayerTorque = 0.5f;
 	ConstantForce2D constantForce2D;
+	enum Thrusting { None, Both, Right, Left }
+	Thrusting prevThrusting = Thrusting.None;
 
 	Vector2 savedRelativeForce = Vector2.zero;
 	float savedTorque = 0;
 	Vector2 savedVelocity = Vector2.zero;
 	float savedAnguarVelocity = 0;
+	float turnChangeHandlingBoost = 40f;
+	float thrusterEnhancementMultiplier = 1.8f;
+	float maxAngularVelocity = 75f;
 
 	Rigidbody2D rbody2D;
-	RigidbodyConstraints2D rbodyConstraints2D;
+	//RigidbodyConstraints2D rbodyConstraints2D = rbody2D;
 	[SerializeField] private PlayerEffects playerEffects = null;
-
+	[SerializeField] private bool stableHandlingMode = true;
+	[SerializeField] private bool enhancedBoosters = true;
+	[SerializeField] private bool enhancedMainDrive = true;
+	[SerializeField] private bool invertedControls = false;
 	private FMOD.Studio.EventInstance thrustAudio;
 
 	void Start()
     {
         constantForce2D = GetComponent<ConstantForce2D>();
 		rbody2D = GetComponent<Rigidbody2D>();
-		rbodyConstraints2D = new RigidbodyConstraints2D();
+		//rbodyConstraints2D = new RigidbodyConstraints2D();
 		thrustAudio = FMODUnity.RuntimeManager.CreateInstance("event:/Main/Player/Thrust");
 		thrustAudio.start();
 	}
@@ -51,27 +59,118 @@ public class PlayerController : MonoBehaviour
 
 			rbody2D.constraints = RigidbodyConstraints2D.None;
 
-			float currentThrust = thrust * 0.5f;
 			float currentTorque = 0f;
+			float currentThrust = 0;
+			if (enhancedMainDrive) { currentThrust = thrust * 0.5f * thrusterEnhancementMultiplier; }
+			else { currentThrust = thrust * 0.5f; }
+
 			bool leftThrusterFunctional = (flightMode != FlightMode.Direct || rbody2D.rotation > -60f || rbody2D.rotation > 300f);
 			bool rightThrusterFunctional = (flightMode != FlightMode.Direct || rbody2D.rotation < 60f || rbody2D.rotation < -300f);
-			if (PlayerInput.LeftThrust && leftThrusterFunctional) 
+			bool leftThrusting = false;
+			bool rightThrusting = false;
+			if (invertedControls) 
 			{
-				currentTorque += leftPlayerTorque;
-				currentThrust += thrust;
+				leftThrusting = PlayerInput.RightThrust && leftThrusterFunctional;
+				rightThrusting = PlayerInput.LeftThrust && rightThrusterFunctional;
 			}
-			else if (!leftThrusterFunctional) { rbody2D.angularVelocity = 0f; }
-			if (PlayerInput.RightThrust && rightThrusterFunctional) 
+			else 
 			{
-				currentTorque += rightPlayerTorque;
-				currentThrust += thrust; 
+				leftThrusting = PlayerInput.LeftThrust && leftThrusterFunctional;
+				rightThrusting = PlayerInput.RightThrust && rightThrusterFunctional;
 			}
-			else if (!rightThrusterFunctional) { rbody2D.angularVelocity = 0f; }
 			
+			bool bothThrusting = leftThrusting && rightThrusting;
+
+			if (leftThrusting && !bothThrusting) 
+			{
+				if (stableHandlingMode && prevThrusting != Thrusting.Left) 
+				{ 
+					rbody2D.angularVelocity = 0f;
+					currentTorque += leftPlayerTorque * turnChangeHandlingBoost;
+					prevThrusting = Thrusting.Left; 
+				}
+				currentTorque += leftPlayerTorque;
+				if (enhancedBoosters)
+				{
+					currentThrust += (thrust * thrusterEnhancementMultiplier);
+				}
+				else { currentThrust += thrust; }
+			}
+			else if (!leftThrusterFunctional) 
+			{
+				//rbody2D.angularVelocity = 0f;
+				rbody2D.rotation = Mathf.Clamp(rbody2D.rotation, -60f, 60f);
+				if (leftThrusting && stableHandlingMode) { currentTorque = 0f; constantForce2D.torque = 0f; }
+			}
+
+			if (rightThrusting && !bothThrusting) 
+			{
+				if (stableHandlingMode && prevThrusting != Thrusting.Right)
+				{
+					rbody2D.angularVelocity = 0f;
+					currentTorque += rightPlayerTorque * turnChangeHandlingBoost;
+					prevThrusting = Thrusting.Right;
+				}
+				currentTorque += rightPlayerTorque;
+				if (enhancedBoosters)
+				{
+					currentThrust += (thrust * thrusterEnhancementMultiplier);
+				}
+				else { currentThrust += thrust; }
+			}
+			else if (!rightThrusterFunctional) 
+			{
+				//rbody2D.angularVelocity = 0f; 
+				rbody2D.rotation = Mathf.Clamp(rbody2D.rotation, -60f, 60f);
+				if (rightThrusting && stableHandlingMode) { currentTorque = 0f; constantForce2D.torque = 0f; }
+			}
+
+			if (bothThrusting)
+			{
+				if (stableHandlingMode && prevThrusting != Thrusting.Both)
+				{
+					rbody2D.angularVelocity = 0f;
+					currentTorque = 0f;
+					prevThrusting = Thrusting.Both;
+				}
+				currentTorque = 0f;
+				if (enhancedBoosters)
+				{
+					currentThrust += (thrust * thrusterEnhancementMultiplier);
+					currentThrust += (thrust * thrusterEnhancementMultiplier);
+					currentThrust += thrust;
+				}
+				else { currentThrust += thrust; }
+			}
+			
+			if (!rightThrusting && !leftThrusting) 
+			{
+				if (stableHandlingMode)
+				{
+					rbody2D.angularVelocity = 0f;
+					currentTorque = 0f;
+					prevThrusting = Thrusting.None;
+				}
+			}
+
 			constantForce2D.relativeForce = transform.InverseTransformDirection(transform.up * currentThrust);
 			constantForce2D.torque = currentTorque;
+			if (stableHandlingMode)
+			{
+				rbody2D.angularVelocity = Mathf.Clamp(rbody2D.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
+			}
+			
+			
 			//SetThrusters(PlayerInput.LeftThrust && leftThrusterFunctional, PlayerInput.RightThrust && rightThrusterFunctional);
-			SetThrusters(PlayerInput.LeftThrust, PlayerInput.RightThrust);
+			if (invertedControls)
+			{
+				SetThrusters(PlayerInput.RightThrust, PlayerInput.LeftThrust);
+			}
+			else 
+			{
+				SetThrusters(PlayerInput.LeftThrust, PlayerInput.RightThrust);
+			}
+			
 
 			savedRelativeForce = constantForce2D.relativeForce;
 			savedTorque = constantForce2D.torque;
@@ -82,6 +181,7 @@ public class PlayerController : MonoBehaviour
 			rbody2D.constraints = RigidbodyConstraints2D.FreezeAll;			
 		}
 	}
+
 
 	private void SetThrusters(bool leftPlayerThrusting, bool rightPlayerThrusting)
 	{
