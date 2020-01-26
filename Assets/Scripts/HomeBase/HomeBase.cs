@@ -62,7 +62,7 @@ public class HomeBase : MonoBehaviour
 	{
 		if (!tractorBeamsAreActive)
 		{
-			if (player.transform.position.y >= this.transform.position.y) { ActivateTractorBeams(); }
+			if (player && player.transform.position.y >= this.transform.position.y) { ActivateTractorBeams(); }
 		}
 
 		if (tractorBeamsAreActive) 
