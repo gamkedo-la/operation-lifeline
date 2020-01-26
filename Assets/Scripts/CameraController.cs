@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
     public GameObject target;
     public float followAhead;
 
@@ -37,5 +36,28 @@ public class CameraController : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
         }
+    }
+
+    public void Shake(float howLongToShake, float howMuchToShake)
+    {   
+        StopCoroutine(StartShake(howLongToShake, howMuchToShake));     
+        StartCoroutine(StartShake(howLongToShake, howMuchToShake));
+    }
+
+    private IEnumerator StartShake(float howLongToShake, float howMuchToShake) 
+    {
+        Vector3 originalPosition = transform.localPosition;        
+
+        for (float howLongAlreadyShaked = 0.0f; howLongAlreadyShaked < howLongToShake; howLongAlreadyShaked += Time.deltaTime)
+        {
+            float x = Random.Range(-1f, 1f) * howMuchToShake;
+            float y = Random.Range(-1f, 1f) * howMuchToShake;
+
+            transform.localPosition = new Vector3(x, targetPosition.y + y, targetPosition.z);    
+
+            yield return null;
+        }
+
+        transform.localPosition = originalPosition;
     }
 }

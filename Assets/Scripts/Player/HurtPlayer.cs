@@ -7,15 +7,19 @@ public class HurtPlayer : MonoBehaviour
 {
 	[Range(0,100)]public int damageOnImpact = 10;
 	[Range(0, 100)] public int damageOverTime = 0;		//damage per second
+	public float hurtShakeDuration = 0.1f;
+	public float hurtShakeAmount = 10f;
 	public bool destroyedOnImpact = true;
 	public GameObject particle;
 	public float accumulatedDamage = 0f;
 
+	private CameraController cameraController;
     private GameObject player;
-    private PlayerShake playerShakeScript;
+    private PlayerShake playerShakeScript;	
 
     private void Awake()
     {
+		cameraController = Camera.main.GetComponent<CameraController>();
         player = GameObject.Find("Player");
         playerShakeScript = player.GetComponent<PlayerShake>();
     }
@@ -24,11 +28,13 @@ public class HurtPlayer : MonoBehaviour
     {
 		if (damageOnImpact > 0)
 		{
-			InflictDamage(collision.collider, damageOnImpact);
+			InflictDamage(collision.collider, damageOnImpact);			
             if(playerShakeScript != null)
-            {
+            {				
                 playerShakeScript.ShakeMe();
-            }
+			}
+
+			cameraController.Shake(hurtShakeDuration, hurtShakeAmount);			
         }
 		if (destroyedOnImpact) { Explode(); SelfDestruct(); }
 	}
