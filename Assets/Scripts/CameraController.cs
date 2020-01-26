@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour
 
     public void Shake(float howLongToShake, float howMuchToShake)
     {   
-        StopCoroutine(StartShake(howLongToShake, howMuchToShake));     
+        StopCoroutine(StartShake(howLongToShake, howMuchToShake));        
         StartCoroutine(StartShake(howLongToShake, howMuchToShake));
     }
 
@@ -53,7 +53,7 @@ public class CameraController : MonoBehaviour
             float x = Random.Range(-1f, 1f) * howMuchToShake;
             float y = Random.Range(-1f, 1f) * howMuchToShake;
 
-            transform.localPosition = new Vector3(x, targetPosition.y + y, targetPosition.z);    
+            transform.localPosition = new Vector3(targetPosition.x + x, targetPosition.y + y, targetPosition.z);    
 
             yield return null;
         }
