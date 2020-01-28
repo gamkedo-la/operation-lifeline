@@ -73,11 +73,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 			lifeLine.localScale = new Vector3(lifeLine.localScale.x,
 												lifeLineLength * healthPercent,
 												lifeLine.localScale.z);
-			Color newColor = new Color(lifeLineColor.r * (2 - healthPercent),
-									   lifeLineColor.g * healthPercent,
-									   lifeLineColor.b * healthPercent);
-			lifeLineMesh.sharedMaterial.color = newColor;
-			lifeLineMesh.material.color = newColor;
+			//Color newColor = new Color(lifeLineColor.r * (2 - healthPercent),
+			//						   lifeLineColor.g * healthPercent,
+			//						   lifeLineColor.b * healthPercent);
+			//lifeLineMesh.sharedMaterial.color = newColor;
+			//lifeLineMesh.material.color = newColor;
 		}
 	}
 
@@ -91,6 +91,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		GameObject deathParticle = Instantiate(deathParticlePrefab, transform.position, Quaternion.Euler(0f, 180f, 0f));
 		deathParticle.GetComponent<ParticleSystem>().Play();
 		Destroy(this.gameObject, 0.2f);
-        gameOverScript.ActivateAnimator();
+        gameOverScript.ActivateAnimatorOnShipDestruction();
 	}
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UI_Meter : MonoBehaviour
 {
 	Transform player;
+	PlayerController playerController;
 	[SerializeField] Image border = null;
 	[SerializeField] Transform destination = null;
 	[SerializeField] float startingTimeUntilDeath = 100f;
@@ -30,6 +31,7 @@ public class UI_Meter : MonoBehaviour
     void Start()
     {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+		playerController = player.gameObject.GetComponent<PlayerController>();
 		rb = player.gameObject.GetComponent<Rigidbody2D>();
 		vel = Mathf.Clamp(rb.velocity.y, minVelValue, Mathf.Infinity);
 		timeUntilDeath = startingTimeUntilDeath;
@@ -51,7 +53,15 @@ public class UI_Meter : MonoBehaviour
     void Update()
     {
 		if (!player) { return; }
+		if (playerController)
+		{
+			if (playerController.AreTimersFrozen() == true) { return; } 
+		}
 		timeUntilDeath = Mathf.Clamp(timeUntilDeath - Time.deltaTime, 0f, startingTimeUntilDeath);
+		if (timeUntilDeath <= 0f) 
+		{ 
+			if (playerController) { playerController.PatientDeath(); } 
+		}
 		if (textETD) { textETD.text = timeUntilDeath.ToString(); }
 		percentETD = timeUntilDeath / startingTimeUntilDeath;
 		rotationETD = -Vector3.forward * (270f * percentETD);

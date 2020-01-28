@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverText : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class GameOverText : MonoBehaviour
     public GameObject tryAgainButton;
     private Animator tryAgainAnimator;
     public GameObject player;
-    
+	public Image FadeToBlackPanel;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,10 +28,32 @@ public class GameOverText : MonoBehaviour
         gameObject.transform.position = player.transform.position;
     }
 
-    public void ActivateAnimator()
+    public void ActivateAnimatorOnPatientDeath()
     {
-        gameOverTextAnimator.enabled = true;
+		StartCoroutine("FadeToBlack");
+		gameOverTextAnimator.enabled = true;
         tryAgainAnimator.enabled = true;
-        Debug.Log("inside ActivateChild");
     }
+
+	public void ActivateAnimatorOnShipDestruction()
+	{
+		StartCoroutine("FadeToBlack");
+		gameOverTextAnimator.enabled = true;	//TODO: Change to a different text?
+		tryAgainAnimator.enabled = true;
+	}
+
+	private IEnumerator FadeToBlack()
+	{
+		Color panelColor = FadeToBlackPanel.color;
+		float alpha = 0f;
+		for (int i = 0; i < 180; i++)
+		{
+			panelColor = new Color(panelColor.r, panelColor.g, panelColor.b, alpha);
+			alpha = alpha + (1f / 180f);
+			yield return new WaitForSeconds(1f/180f);
+		}
+		
+	}
+
+	
 }

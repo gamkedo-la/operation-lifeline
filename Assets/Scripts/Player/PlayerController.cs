@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
 	enum Thrusting { None, Both, Right, Left }
 	Thrusting prevThrusting = Thrusting.None;
 
+	private bool rightThrusterDisabledByExternal = false;
+	private bool leftThrusterDisabledByExternal = false;
+
 	Vector2 savedRelativeForce = Vector2.zero;
 	float savedTorque = 0;
 	Vector2 savedVelocity = Vector2.zero;
@@ -22,6 +25,12 @@ public class PlayerController : MonoBehaviour
 	float maxAngularVelocity = 75f;
 
 	Rigidbody2D rbody2D;
+	RigidbodyConstraints2D unfrozenConstraints;
+	Vector2 unfrozenVelocity;
+	float unfrozenAngularVelocity;
+	bool unfrozenKinematic;
+	bool unfrozenSimulated;
+
 	//RigidbodyConstraints2D rbodyConstraints2D = rbody2D;
 	[SerializeField] private PlayerEffects playerEffects = null;
 	[SerializeField] private bool stableHandlingMode = true;
@@ -29,6 +38,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private bool enhancedMainDrive = true;
 	[SerializeField] private bool invertedControls = false;
 	private FMOD.Studio.EventInstance thrustAudio;
+	private bool timersFrozen = false;
 
 	void Start()
     {
@@ -66,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
 			bool leftThrusterFunctional = (flightMode != FlightMode.Direct || rbody2D.rotation > -60f || rbody2D.rotation > 300f);
 			bool rightThrusterFunctional = (flightMode != FlightMode.Direct || rbody2D.rotation < 60f || rbody2D.rotation < -300f);
+			
 			bool leftThrusting = false;
 			bool rightThrusting = false;
 			if (invertedControls) 
@@ -78,7 +89,18 @@ public class PlayerController : MonoBehaviour
 				leftThrusting = PlayerInput.LeftThrust && leftThrusterFunctional;
 				rightThrusting = PlayerInput.RightThrust && rightThrusterFunctional;
 			}
-			
+
+			if (leftThrusterDisabledByExternal) 
+			{ 
+				leftThrusterFunctional = false;
+				leftThrusting = false;
+			}
+			if (rightThrusterDisabledByExternal) 
+			{ 
+				rightThrusterFunctional = false;
+				rightThrusting = false;
+			}
+
 			bool bothThrusting = leftThrusting && rightThrusting;
 
 			if (leftThrusting && !bothThrusting) 
@@ -202,5 +224,80 @@ public class PlayerController : MonoBehaviour
 		{
 			playerEffects.SetThrusters(leftPlayerThrusting, rightPlayerThrusting);
 		}
+	}
+
+	public void ActivateDockingProtocol()
+	{
+		DisableRightThrusterByExternal();
+		DisableLeftThrusterByExternal();
+		DisableTimers();
+	}
+
+	public void DisableRightThrusterByExternal()
+	{
+		rightThrusterDisabledByExternal = true;
+	}
+
+	public void DisableLeftThrusterByExternal()
+	{
+		leftThrusterDisabledByExternal = true;
+	}
+
+	public void RepairThrusters()
+	{
+		rightThrusterDisabledByExternal = false;
+		leftThrusterDisabledByExternal = false;
+		DisableTimers();
+	}
+
+	public void DisableTimers()
+	{
+		timersFrozen = true;
+	}
+
+	public void EnableTimers()
+	{
+		timersFrozen = false;
+	}
+
+	public bool AreTimersFrozen()
+	{
+		return timersFrozen;
+	}
+
+	public void PatientDeath()
+	{
+		ActivateDockingProtocol();
+		Freeze();
+		GameObject gameOverCanvas = GameObject.Find("GameOverCanvas");
+		if (gameOverCanvas) 
+		{
+			GameOverText gameOverScript = gameOverCanvas.GetComponent<GameOverText>();
+			if (gameOverScript) { gameOverScript.ActivateAnimatorOnPatientDeath(); }
+		}
+	}
+
+	public void Freeze()
+	{
+		unfrozenConstraints = rbody2D.constraints;
+		unfrozenVelocity = rbody2D.velocity;
+		unfrozenAngularVelocity = rbody2D.angularVelocity;
+		unfrozenKinematic = rbody2D.isKinematic;
+		unfrozenSimulated = rbody2D.simulated;
+
+		rbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+		rbody2D.velocity = Vector2.zero;
+		rbody2D.angularVelocity = 0f;
+		rbody2D.isKinematic = true;
+		rbody2D.simulated = false;
+	}
+
+	public void UnFreeze()
+	{
+		rbody2D.constraints = unfrozenConstraints;
+		rbody2D.velocity = unfrozenVelocity;
+		rbody2D.angularVelocity = unfrozenAngularVelocity;
+		rbody2D.isKinematic = unfrozenKinematic;
+		rbody2D.simulated = unfrozenSimulated;
 	}
 }

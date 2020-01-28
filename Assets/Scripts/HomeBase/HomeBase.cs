@@ -14,7 +14,9 @@ public class HomeBase : MonoBehaviour
 	private GameObject player = null;
 	private float tractorSpeed = 85f;
 	private float arrivalThreshold = 50f;
+	
 
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class HomeBase : MonoBehaviour
 
 	void ActivateTractorBeams()
 	{
+		ActivatePlayerDockingProtocol();
 		FreezePlayer();
 		foreach (Transform emitter in emitters)
 		{
@@ -90,6 +93,14 @@ public class HomeBase : MonoBehaviour
 		rbody2D.simulated = false;
 	}
 
+	private void ActivatePlayerDockingProtocol()
+	{
+		PlayerController playerController = player.GetComponent<PlayerController>();
+		if (playerController)
+		{
+			playerController.ActivateDockingProtocol();
+		}
+	}
 	private void TractorPlayer()
 	{
 		if (!landingZone) return;
