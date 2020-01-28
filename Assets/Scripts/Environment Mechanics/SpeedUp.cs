@@ -14,10 +14,15 @@ public class SpeedUp : Collectibles
     {
 
         base.OnTriggerEnter2D(collider);
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        originalThrust = playerController.thrust;
-        playerController.thrust *= thrustMultiplier;        
-        StartCoroutine(Cooldown());
+        GameObject p1 = GameObject.FindGameObjectWithTag("Player");
+        if (p1) {
+            playerController = p1.GetComponent<PlayerController>();
+            originalThrust = playerController.thrust;
+            playerController.thrust *= thrustMultiplier;        
+            StartCoroutine(Cooldown());
+        } else {
+            Debug.Log("Speedup Error: player not found");
+        }
         
     }
 
