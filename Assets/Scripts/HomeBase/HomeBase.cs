@@ -7,7 +7,7 @@ public class HomeBase : MonoBehaviour
     [SerializeField] private string nextLevelSceneName = null;
 	[SerializeField] Transform[] emitters = null;
 	[SerializeField] Material beamMaterial = null;
-	[SerializeField] Transform landingZone;
+	[SerializeField] Transform landingZone = null;
 	private List<LineRenderer> tractorBeams = new List<LineRenderer>();
     private BoxCollider2D colHomeBase;
 	private bool tractorBeamsAreActive = false;
@@ -92,7 +92,8 @@ public class HomeBase : MonoBehaviour
 
 	private void TractorPlayer()
 	{
-		float distanceToPlayer = Vector2.Distance(landingZone.position, player.transform.position);
+		if (!landingZone) return;
+        float distanceToPlayer = Vector2.Distance(landingZone.position, player.transform.position);
 		float tractingAmount = Mathf.Clamp(tractorSpeed * Time.deltaTime, 0f, distanceToPlayer);
 		Vector2 vectorTowardLandingZone = landingZone.position - player.transform.position;
 		Vector2 playerPos = new Vector2(player.transform.position.x, player.transform.position.y);
