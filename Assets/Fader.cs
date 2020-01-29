@@ -43,13 +43,15 @@ public class Fader : MonoBehaviour
 	private IEnumerator FadeIn(object durObj)
 	{
 		float duration = (float)durObj;
-		Color panelColor = target.color;
+		Color newColor = target.color;
 		float alpha = 0f;
 		float targetAlpha = 1f;
 		for (float i = 0f; i < duration; i += Time.deltaTime)
 		{
-			panelColor = new Color(panelColor.r, panelColor.g, panelColor.b, alpha);
-			alpha = alpha + (1 / duration) * Time.deltaTime;
+			//panelColor = new Color(panelColor.r, panelColor.g, panelColor.b, alpha);
+			newColor = new Color(newColor.r, newColor.g, newColor.b, alpha);
+			target.color = newColor;
+			alpha = alpha + (targetAlpha / duration) * Time.deltaTime;
 			alpha = Mathf.Clamp(alpha, 0f, targetAlpha);
 			yield return null;
 		}

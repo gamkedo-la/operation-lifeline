@@ -5,55 +5,51 @@ using UnityEngine.UI;
 
 public class GameOverText : MonoBehaviour
 {
-    public GameObject gameOverTextObject;
-    private Animator gameOverTextAnimator;
-    public GameObject tryAgainButton;
-    private Animator tryAgainAnimator;
-    public GameObject player;
-	public Image FadeToBlackPanel;
+    [SerializeField] private Animator gameOverPatientDeathAnimator;
+	[SerializeField] private Animator gameOverShipDestructionAnimator;
+    [SerializeField] private Animator tryAgainAnimator;
+    private GameObject player;
+	[SerializeField] private Fader fader=null;
 
     // Start is called before the first frame update
     void Awake()
     {
-        gameOverTextAnimator = gameOverTextObject.GetComponent<Animator>();
-        tryAgainAnimator = tryAgainButton.GetComponent<Animator>();
+        //gameOverPatientDeathAnimator = gameOverPatientDeathGO.GetComponent<Animator>();
+        //tryAgainAnimator = tryAgainButton.GetComponent<Animator>();
 
-        player = FindObjectOfType<PlayerController>().gameObject;
+        //player = FindObjectOfType<PlayerController>().gameObject;
+		//if (FadeToBlackPanel) { fader = FadeToBlackPanel.gameObject.GetComponent<Fader>(); } 
     }
 
-    // Update is called once per frame
-    void Update()
-    {      
+	// Update is called once per frame
+	private void Start()
+	{
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
+
+	void Update()
+    {   
         if (player)
-        gameObject.transform.position = player.transform.position;
+		{
+			gameObject.transform.position = player.transform.position;
+		}
     }
 
     public void ActivateAnimatorOnPatientDeath()
     {
-		StartCoroutine("FadeToBlack");
-		gameOverTextAnimator.enabled = true;
-        tryAgainAnimator.enabled = true;
+		if (fader) { fader.BeginFadeIn(6f); }
+		if (gameOverPatientDeathAnimator) { gameOverPatientDeathAnimator.enabled = true; }
+		if (tryAgainAnimator) { tryAgainAnimator.enabled = true; }
     }
 
 	public void ActivateAnimatorOnShipDestruction()
 	{
-		StartCoroutine("FadeToBlack");
-		gameOverTextAnimator.enabled = true;	//TODO: Change to a different text?
-		tryAgainAnimator.enabled = true;
+		if (fader) { fader.BeginFadeIn(6f); }
+		if (gameOverShipDestructionAnimator) { gameOverShipDestructionAnimator.enabled = true; }
+		if (tryAgainAnimator) { tryAgainAnimator.enabled = true; }
 	}
 
-	private IEnumerator FadeToBlack()
-	{
-		Color panelColor = FadeToBlackPanel.color;
-		float alpha = 0f;
-		for (int i = 0; i < 180; i++)
-		{
-			panelColor = new Color(panelColor.r, panelColor.g, panelColor.b, alpha);
-			alpha = alpha + (1f / 180f);
-			yield return new WaitForSeconds(1f/180f);
-		}
-		
-	}
+	
 
 	
 }
