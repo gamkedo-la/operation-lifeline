@@ -714,7 +714,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24448
+  m_Name: pb_Mesh-98150
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3288,7 +3288,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24444
+  m_Name: pb_Mesh-98146
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -50569,6 +50569,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tangents.Array.data[3031].z
       value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777958896347658013, guid: 81b91e13e5565274fa885686eb7ca3ac,
+        type: 3}
+      propertyPath: nextLevelSceneName
+      value: Starting Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b91e13e5565274fa885686eb7ca3ac, type: 3}

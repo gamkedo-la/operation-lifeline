@@ -33,10 +33,10 @@ public class GameManager : MonoBehaviour
     private float totalJourneyDistanceThisLevel = 0;
     [SerializeField] private float progressIndicatorUpdateInterval = 3;
     private Scrollbar progressIndicatorUI;
-
+	
     //From Loading Screen Test
-    public GameObject loadingScreen;
-    public Slider loadingSlider;
+	[SerializeField] private GameObject loadingScreen;
+    [SerializeField] private Slider loadingSlider;
 
     public void SetPause(bool toPause = true) {
         isPaused = toPause;
@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void InitializeScene() {
+		if (loadingScreen) { loadingScreen.SetActive(false); }
         homeBase = GameObject.FindWithTag("HomeBase");
         player = GameObject.FindWithTag("Player");
         totalJourneyDistanceThisLevel = GetTotalJourneyDistance();
@@ -82,36 +83,37 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator MoveToScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
     {
-        //yield return new WaitForSeconds(1);
-        if (loadingScreen != null)
+		//yield return new WaitForSeconds(1);
+		
+		if (loadingScreen != null)
+		{
+			loadingScreen.SetActive(true);
+		}
+
+		loadingScreen.SetActive(true);
+
+		if (RuntimeManager.HasBankLoaded("Master"))
         {
-            loadingScreen.SetActive(true);
-        }
-
-        if (RuntimeManager.HasBankLoaded("Master"))
-        {
-            //SceneManager.LoadScene(sceneName, mode);
-            //begin Async Load Test
-
-            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-            while (!operation.isDone)
+			//SceneManager.LoadScene(sceneName, mode);
+			//begin Async Load Test
+			Scene oldScene = SceneManager.GetActiveScene();
+            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+			
+			while (!operation.isDone)
             {
-                float progress = Mathf.Clamp01(operation.progress / 0.9f);
-                Debug.Log(progress);
+				float progress = Mathf.Clamp01(operation.progress);	
+                Debug.Log(progress + " :  Actual progress: " + operation.progress * 100 + "%");
                 loadingSlider.value = progress;
-
                 yield return null;
             }
-            //End Async Load Test
-            InitializeScene();
-
-            yield return null;
+			//End Async Load Test
+			SceneManager.UnloadSceneAsync(oldScene);
+			InitializeScene();
         }
         else
         {
-            StartCoroutine(MoveToScene(sceneName, LoadSceneMode.Single));
-        }
+			StartCoroutine(MoveToScene(sceneName, LoadSceneMode.Single));
+		}
     }
     
     private IEnumerator playerPositionUpdate() {
@@ -145,4 +147,6 @@ public class GameManager : MonoBehaviour
 	{
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/UI/Menu Selection");
 	}
+
+	
 }

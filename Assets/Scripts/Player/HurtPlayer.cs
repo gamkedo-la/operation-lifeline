@@ -34,7 +34,7 @@ public class HurtPlayer : MonoBehaviour
                 playerShakeScript.ShakeMe();
 			}
 
-			cameraController.Shake(hurtShakeDuration, hurtShakeAmount);			
+			if (cameraController) { cameraController.Shake(hurtShakeDuration, hurtShakeAmount); }
         }
 		if (destroyedOnImpact) { Explode(); SelfDestruct(); }
 	}

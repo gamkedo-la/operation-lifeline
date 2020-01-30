@@ -7,6 +7,8 @@ TagManager:
   - Wreckage
   - HomeBase
   - Rock
+  - EventSystem
+  - LoadingBar
   layers:
   - Default
   - TransparentFX
