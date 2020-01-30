@@ -56,9 +56,16 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single) {
 
-        StartCoroutine(MoveToScene(sceneName, LoadSceneMode.Single));
-        /*SceneManager.LoadScene(sceneName, mode);
-        InitializeScene();*/
+        if (sceneName.Equals(SceneManager.GetActiveScene().name))
+        {
+            SceneManager.LoadScene(sceneName, mode);
+            InitializeScene();
+        }
+        else
+        {
+            StartCoroutine(MoveToScene(sceneName, LoadSceneMode.Single));
+        }
+
     }
 
 	private void Start() {
