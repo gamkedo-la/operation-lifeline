@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float progressIndicatorUpdateInterval = 3;
     private Scrollbar progressIndicatorUI;
 
+    //From Loading Screen Test
+    public GameObject loadingScreen;
+    public Slider loadingSlider;
+
     public void SetPause(bool toPause = true) {
         isPaused = toPause;
 		pauseMenu.SetActive(toPause);
@@ -78,11 +82,28 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator MoveToScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
     {
-        yield return new WaitForSeconds(1);
-        
+        //yield return new WaitForSeconds(1);
+        if (loadingScreen != null)
+        {
+            loadingScreen.SetActive(true);
+        }
+
         if (RuntimeManager.HasBankLoaded("Master"))
         {
-            SceneManager.LoadScene(sceneName, mode);
+            //SceneManager.LoadScene(sceneName, mode);
+            //begin Async Load Test
+
+            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+
+            while (!operation.isDone)
+            {
+                float progress = Mathf.Clamp01(operation.progress / 0.9f);
+                Debug.Log(progress);
+                loadingSlider.value = progress;
+
+                yield return null;
+            }
+            //End Async Load Test
             InitializeScene();
 
             yield return null;
