@@ -1050,6 +1050,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 790480858}
     m_Modifications:
+    - target: {fileID: 5143431574393879101, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143431574393879101, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143431574393879101, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143431574393879101, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5412068150522799163, guid: 911f967906da16942baa358dda90286e,
         type: 3}
       propertyPath: m_Name
@@ -1115,10 +1135,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5412068150441478159, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 359.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412068150441478159, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 120.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5412068148649973105, guid: 911f967906da16942baa358dda90286e,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412068150133137679, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 120.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412068150133137679, guid: 911f967906da16942baa358dda90286e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 160.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 911f967906da16942baa358dda90286e, type: 3}
