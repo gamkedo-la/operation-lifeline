@@ -4430,6 +4430,11 @@ PrefabInstance:
       propertyPath: destination
       value: 
       objectReference: {fileID: 1581668737}
+    - target: {fileID: 4268692325167358168, guid: c09ad1d230a05a04cac58def43c6e585,
+        type: 3}
+      propertyPath: startingTimeUntilDeath
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 4268692325901292287, guid: c09ad1d230a05a04cac58def43c6e585,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4454,6 +4459,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 13.569992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268692325080187437, guid: c09ad1d230a05a04cac58def43c6e585,
+        type: 3}
+      propertyPath: m_Name
+      value: Timers and Speed Meter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268692326752789366, guid: c09ad1d230a05a04cac58def43c6e585,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268692324871678715, guid: c09ad1d230a05a04cac58def43c6e585,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268692326645280632, guid: c09ad1d230a05a04cac58def43c6e585,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c09ad1d230a05a04cac58def43c6e585, type: 3}

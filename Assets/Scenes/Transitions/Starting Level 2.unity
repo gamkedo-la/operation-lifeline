@@ -713,12 +713,9 @@ MonoBehaviour:
 
 
     Note: The patient is not likely to survive a trip all the way to the hospital
-    from this far out in the system, but is we may be able to supercharge his healing
-    process by collecting energy as we fly close to some of those irradiated space
-    rocks. We''ll just have to hope that the hospital can cure whatever long-term
-    damage this high-speed radiation therapy may cause.
-
-'
+    from this far out in the system, but we can supercharge our healing devices by
+    collecting exotic energy from  irradiated space rocks. Irradiated rocks glow green
+    when you shine a light on them.'
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0
