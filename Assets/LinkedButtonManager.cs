@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 
 public class LinkedButtonManager : MonoBehaviour
@@ -61,7 +62,12 @@ public class LinkedButtonManager : MonoBehaviour
 	void StartLevel()
 	{
 		GameManager.Instance.uiSoundOnClick();
-		if (loadingButton && loadingButton.gameObject.activeSelf==true) { loadingButton.enabled = true; }
+		if (loadingButton && loadingButton.gameObject.activeSelf==true) 
+		{
+			loadingButton.enabled = true;
+			TextMeshProUGUI text = loadingButton.GetComponentInChildren<TextMeshProUGUI>();
+			if (text) { text.text = "Loading..."; }
+		}
 		GameManager.Instance.LoadScene(levelToLoad);
 	}
 }

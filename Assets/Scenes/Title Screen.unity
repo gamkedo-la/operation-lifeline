@@ -1163,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 5412068150522799163, guid: 911f967906da16942baa358dda90286e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5412068150522799108, guid: 911f967906da16942baa358dda90286e,
         type: 3}
@@ -1238,7 +1238,7 @@ PrefabInstance:
     - target: {fileID: 5412068148649973105, guid: 911f967906da16942baa358dda90286e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5143431574393879101, guid: 911f967906da16942baa358dda90286e,
         type: 3}

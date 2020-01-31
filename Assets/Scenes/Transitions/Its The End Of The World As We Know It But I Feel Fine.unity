@@ -695,16 +695,30 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The End Of the Universe.\n\nThere is no more content for you to explore,
-    brave medicalnaught.  You have reached the furthest reachest beyond the light
-    of Paradisium's brightest star.  \n\nIs this empty void all that remains?  Is
-    this how your great adventure finally ends?  We hope not.  Now it is time you
-    to make your own adventure - to set forth not just to seek out distant worlds,
-    but to craft them.  And in so doing, maybe explore something about yourself in
-    the process.\n\nBut seriously, this is the end.  There's no more.\n\nYou can stop
-    playing now.\n\nOur buy our DLC.  You know, whatever.  No pressure.\n\n\"Live
-    long and propsper. Or we'll have to come and get you.\"\n- traditional space-greeting
-    of the Paradisium Medicalnaught Corps"
+  m_Text: 'The End Of the Universe.
+
+
+    There is no more content for you to explore, brave medicalnaught.  You have made
+    it to the furthest reaches beyond the light of Paradisium''s bright sun.
+
+
+    Is this empty void all that remains?  Is this how your great adventure finally
+    ends?  We hope not.  Now it is time you to make your own adventure - to set forth
+    not just to seek out distant worlds, but to craft them.  And in so doing, maybe
+    explore something about yourself in the process.
+
+
+    But seriously, this is the end.  There''s no more.
+
+
+    You can stop playing now.
+
+
+
+
+    "Live long and propsper. Or we''ll have to come and get you."
+
+    - traditional space-greeting of the Paradisium Medicalnaught Corps'
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class GameOverText : MonoBehaviour
     [SerializeField] private Animator gameOverPatientDeathAnimator;
 	[SerializeField] private Animator gameOverShipDestructionAnimator;
     [SerializeField] private Animator tryAgainAnimator;
+	[SerializeField] private GameObject dualStartButtons;
     private GameObject player;
 	[SerializeField] private Fader fader=null;
 
@@ -39,14 +40,25 @@ public class GameOverText : MonoBehaviour
     {
 		if (fader) { fader.BeginFadeIn(6f); }
 		if (gameOverPatientDeathAnimator) { gameOverPatientDeathAnimator.enabled = true; }
-		if (tryAgainAnimator) { tryAgainAnimator.enabled = true; }
-    }
+		//if (tryAgainAnimator) { tryAgainAnimator.enabled = true; }
+		StartCoroutine("ShowDualStartButtons");
+	}
 
 	public void ActivateAnimatorOnShipDestruction()
 	{
 		if (fader) { fader.BeginFadeIn(6f); }
 		if (gameOverShipDestructionAnimator) { gameOverShipDestructionAnimator.enabled = true; }
-		if (tryAgainAnimator) { tryAgainAnimator.enabled = true; }
+		//if (tryAgainAnimator) { tryAgainAnimator.enabled = true; }
+		StartCoroutine("ShowDualStartButtons");
+	}
+
+	private IEnumerator ShowDualStartButtons()
+	{
+		yield return new WaitForSeconds(1.5f);
+		if (dualStartButtons) 
+		{ 
+			dualStartButtons.SetActive(true); 
+		}
 	}
 
 	

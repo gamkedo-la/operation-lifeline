@@ -361,7 +361,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771771465}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccec4db5d08cb594ba5720236c0cb09d, type: 3}
   m_Name: 
@@ -696,20 +696,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Level 3\nParadisium System - The Spectrum\n\nThe Spectrum is the system's
-    largest commercial spacebase, setup at L3 lagrange point against a backdrop of
-    colorful nebulae. Each spectacle of ancient light is a newborn star in the making.
-    \ It's a common practice for tourists to make wishes among those colored nebulas,
-    and there's a complex mythology about which colors have special meanings.  Well,
-    popular for Humans. To the best of our knowledge, the Rylaks do not have any equivilent
-    word for the concept of 'wishes'. \n\nSpectrum shopping centers and resorts have
-    the greatest number of tourists in the entire system, and that includes both Human
-    and Rylak. A complex system of strange rituals and traditions have sprung up to
-    allow these communities to coexist and, to some extent, interact and trade with
-    each other.  Unfortunately, sometimes those interactions don't always turn out
-    well. \n\nA local Human has infected a Rylak with Nebula Rubeola (space measles)
-    that has left his whole system in shock. The Rylaks are blaming us for releasing
-    a plague on them and tensions are high. Can you get the Rylak to an advanced medical
-    facility before we have another war on our hands?"
+    largest commercial spacebase, setup at the L3 Lagrange point against a backdrop
+    of colorful nebulae. Each spectacle of ancient light is a newborn star in the
+    making.  It's a common practice for tourists to make wishes among those colored
+    nebulas, and there's a complex mythology about which colors have special meanings.
+    \ Well, it's a common practice for Humans. To the best of our knowledge, the Rylaks
+    do not have any equivilent word for the concept of 'wishes'. \n\nSpectrum shopping
+    centers and resorts have the greatest number of tourists in the entire system,
+    and that includes both Human and Rylak. A complex system of strange rituals and
+    traditions have sprung up to allow these communities to coexist and, to some extent,
+    interact and trade with each other.  Unfortunately, sometimes those interactions
+    don't always turn out well. \n\nA local Human has infected a Rylak with Nebula
+    Rubeola (space measles) that has left his whole system in shock. The Rylaks are
+    blaming us for releasing a plague on them and tensions are high. Can you get the
+    Rylak to an advanced medical facility before we have another war on our hands?"
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0
