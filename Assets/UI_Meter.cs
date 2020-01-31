@@ -24,11 +24,13 @@ public class UI_Meter : MonoBehaviour
 	float timeUntilArrival;
 	float vel;
 	float minVelValue = 1f;
+	float slowSpeed = 120f;
 	[SerializeField] Slider speedIndicator = null;
 	[SerializeField] Image speedFillBar = null;
 	[SerializeField] Text textETD = null;
+	[SerializeField] Text textETA = null;
 
-    void Start()
+	void Start()
     {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		playerController = player.gameObject.GetComponent<PlayerController>();
@@ -48,21 +50,11 @@ public class UI_Meter : MonoBehaviour
 		var distance = Vector3.Distance(player.position, destination.position);
 		if (distance > arrivalDistance) { distance = distance - arrivalDistance; } else { distance = 0f; }
 		return distance;
-	}    
+	}
 
-    void Update()
-    {
+	void Update()
+	{
 		if (!player) { return; }
-		if (playerController)
-		{
-			if (playerController.AreTimersFrozen() == true) { return; } 
-		}
-		timeUntilDeath = Mathf.Clamp(timeUntilDeath - Time.deltaTime, 0f, startingTimeUntilDeath);
-		if (timeUntilDeath <= 0f) 
-		{ 
-			if (playerController) { playerController.PatientDeath(); } 
-		}
-		if (textETD) { textETD.text = timeUntilDeath.ToString(); }
 		percentETD = timeUntilDeath / startingTimeUntilDeath;
 		rotationETD = -Vector3.forward * (270f * percentETD);
 		knobETD.transform.rotation = Quaternion.Euler(rotationETD);
@@ -85,5 +77,24 @@ public class UI_Meter : MonoBehaviour
 			border.color = Color.red;
 			speedFillBar.color = Color.red;
 		}
+
+		
+
+		if (playerController)
+		{
+			if (playerController.AreTimersFrozen() == true) { return; }
+		}
+		timeUntilDeath = Mathf.Clamp(timeUntilDeath - Time.deltaTime, 0f, startingTimeUntilDeath);
+		if (timeUntilDeath <= 0f)
+		{
+			if (playerController) { playerController.PatientDeath(); }
+		}
+		if (textETD) { textETD.text = timeUntilDeath.ToString("00:00"); }
+		if (textETD && timeUntilDeath < 0.1f) { textETD.text = "--:--"; }
+		if (textETA) { textETA.text = timeUntilArrival.ToString("00:00"); }
+		if (textETA && !player) { textETA.text = "--:--"; }
+		if (textETA && player && vel < slowSpeed) { textETA.text = "--:--"; }
+
+
 	}
 }
