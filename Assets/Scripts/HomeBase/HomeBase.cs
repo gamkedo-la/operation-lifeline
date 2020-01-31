@@ -84,7 +84,6 @@ public class HomeBase : MonoBehaviour
 
 	private void FreezePlayer()
 	{
-		Debug.Log("Tractor beams taking control of player ship.");
 		Rigidbody2D rbody2D = player.GetComponent<Rigidbody2D>();
 		rbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
 		rbody2D.velocity = Vector2.zero;

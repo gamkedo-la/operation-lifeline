@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+			yield return new WaitForSeconds(0.5f);
 			StartCoroutine(MoveToScene(sceneName, LoadSceneMode.Single));
 		}
     }
