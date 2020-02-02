@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+public enum MaterialType { Metal, Energy}
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
@@ -15,6 +18,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	Color lifeLineColor;
 	bool isDead = false;
 	float regen = 0f;
+	bool isInvulnerable = false;
+	bool invulnerabilityToggledOff = false;
+	int invulnerabilityFrameTimer = 0;
+	MaterialType materialType = MaterialType.Metal;
+	[SerializeField] Slider healthBar;
 
     private GameObject gameOverCanvas;
     private GameOverText gameOverScript;
@@ -34,16 +42,27 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         gameOverCanvas = GameObject.Find("GameOverCanvas");
         gameOverScript = gameOverCanvas.GetComponent<GameOverText>();
-
 	}
 
+	public MaterialType GetMaterialType()
+	{
+		return materialType;
+	}
 	public void Update()
 	{
 		if (health<maxRengeration && regenerating && !isDead) { Regenerate(); }
+
+		if (isInvulnerable && invulnerabilityToggledOff && invulnerabilityFrameTimer <= 0)
+		{
+			isInvulnerable = false;
+			invulnerabilityToggledOff = false;
+		}
+		if (invulnerabilityToggledOff) { invulnerabilityFrameTimer -= 1; }
 	}
 
 	public void AdjustHealth(int adjustment)
 	{
+		if (isInvulnerable && adjustment < 0) {return; }
 		health = health + adjustment;
 		AdjustHealthIndicators();
 	}
@@ -60,14 +79,33 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 	public void TakeDamage(int damage)
 	{
+		if (isInvulnerable) { TakeInvulnerableHit(-damage); return; }
 		AdjustHealth(-damage);
-		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/Player/Impact");
+		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/Player/Impact"); 
 		if (health<1 && !isDead) { Die(); }
+	}
+
+	public void TakeInvulnerableHit(int adjustment)
+	{
+		GameManager.Instance.uiSoundOnHover();
+		if (adjustment > 0) { AdjustHealth(adjustment); }	
+	}
+
+	public void SetInvulnerability(bool setInvulnerable)
+	{
+		if (setInvulnerable == true) { isInvulnerable = true; invulnerabilityToggledOff = false; }
+		else { invulnerabilityToggledOff = true; invulnerabilityFrameTimer = 3; }
+	}
+
+	public bool GetInvulnerability()
+	{
+		return isInvulnerable;
 	}
 
 	private void AdjustHealthIndicators()
 	{
 		float healthPercent = (float)health / 100f;
+		if (healthBar) { healthBar.value = healthPercent; }
 		if (lifeLine)
 		{
 			lifeLine.localScale = new Vector3(lifeLine.localScale.x,
@@ -84,6 +122,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	public void Die()
 	{
 		isDead = true;
+		isInvulnerable = false;
 		foreach (Transform child in transform)
 		{
 			if (child.gameObject.tag=="Wreckage") { child.SetParent(null); }

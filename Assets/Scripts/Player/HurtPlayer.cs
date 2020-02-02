@@ -29,12 +29,6 @@ public class HurtPlayer : MonoBehaviour
 		if (damageOnImpact > 0)
 		{
 			InflictDamage(collision.collider, damageOnImpact);			
-            if(playerShakeScript != null)
-            {				
-                playerShakeScript.ShakeMe();
-			}
-
-			if (cameraController) { cameraController.Shake(hurtShakeDuration, hurtShakeAmount); }
         }
 		if (destroyedOnImpact) { Explode(); SelfDestruct(); }
 	}
@@ -62,6 +56,17 @@ public class HurtPlayer : MonoBehaviour
 	{
 		IDamageable health = other.GetComponentInParent<IDamageable>();
 		if (health != null) { health.TakeDamage(damageAmt); }
+
+		if (health != null && 
+			health.GetInvulnerability() == false &&
+			playerShakeScript != null &&
+			health.GetMaterialType() == MaterialType.Metal )
+		{
+			playerShakeScript.ShakeMe();
+			if (cameraController) { cameraController.Shake(hurtShakeDuration, hurtShakeAmount); }
+		}
+				
+
 	}
 
 	private void Explode()

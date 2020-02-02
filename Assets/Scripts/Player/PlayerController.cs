@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,25 +35,36 @@ public class PlayerController : MonoBehaviour
 	//RigidbodyConstraints2D rbodyConstraints2D = rbody2D;
 	[SerializeField] private PlayerEffects playerEffects = null;
 	[SerializeField] private bool stableHandlingMode = true;
-	[SerializeField] private bool enhancedBoosters = true;
-	[SerializeField] private bool enhancedMainDrive = true;
+	private bool enhancedBoosters = false;
+	private bool enhancedMainDrive = false;
 	[SerializeField] private bool invertedControls = false;
 	private FMOD.Studio.EventInstance thrustAudio;
 	private bool timersFrozen = false;
+	private float speedBoostTime = 0f;
+	private PlayerHealth playerHealth = default;
+	private ShieldHealth shield = default;
+	[SerializeField] Slider shieldBarUI = default;
+	[SerializeField] Text enhancedSpeedLabelUI = default;
 
-	void Start()
+void Start()
     {
         constantForce2D = GetComponent<ConstantForce2D>();
 		rbody2D = GetComponent<Rigidbody2D>();
 		//rbodyConstraints2D = new RigidbodyConstraints2D();
 		thrustAudio = FMODUnity.RuntimeManager.CreateInstance("event:/Main/Player/Thrust");
 		thrustAudio.start();
+		playerHealth = gameObject.GetComponent<PlayerHealth>();
 	}
 
 	void OnDestroy() 
 	{
 		thrustAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 		thrustAudio.release();
+	}
+
+	private void Update()
+	{
+		CountDownPowerUps();
 	}
 
 	void FixedUpdate()
@@ -204,6 +216,48 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	public void PowerUpSpeed(float time, ICollectable collectable)
+	{
+		speedBoostTime = Mathf.Clamp(speedBoostTime + time, 0f, Mathf.Infinity);
+		enhancedMainDrive = true;
+		enhancedBoosters = true;
+		if (enhancedSpeedLabelUI) { enhancedSpeedLabelUI.text = "Enhanced"; }
+		collectable.ResolvePickedUp();
+	}
+
+	public void PowerUpShield(GameObject prefab, int shieldHealth, ICollectable collectable)
+	{
+		Invulnerable(true);
+		if (!shield) 
+		{ 
+			GameObject shieldGO = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
+			shield = shieldGO.GetComponent<ShieldHealth>();
+		}
+		if (shield) 
+		{ 
+			shield.gameObject.SetActive(true);
+			shield.ActivateShield(shieldHealth, shieldBarUI, this); 
+		}
+	}
+
+	public void Invulnerable(bool isInvulnerable)
+	{
+		if (playerHealth) { playerHealth.SetInvulnerability(isInvulnerable); }
+	}
+
+	private void CountDownPowerUps()
+	{
+		if ( speedBoostTime <= 0f) { PowerDownSpeed(); }
+		else { speedBoostTime = Mathf.Clamp(speedBoostTime - Time.deltaTime, 0f, float.MaxValue); }
+	}
+
+	public void PowerDownSpeed()
+	{
+		speedBoostTime = 0f;
+		enhancedMainDrive =false;
+		enhancedBoosters = false;
+		if (enhancedSpeedLabelUI) { enhancedSpeedLabelUI.text = ""; }
+	}
 
 	private void SetThrusters(bool leftPlayerThrusting, bool rightPlayerThrusting)
 	{

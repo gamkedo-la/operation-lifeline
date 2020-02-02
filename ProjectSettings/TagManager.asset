@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - EventSystem
   - LoadingBar
+  - ShieldBar
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Backboard
   - Rocks
   - Background
-  - 
+  - ShieldEnergy
   - 
   - 
   - 
