@@ -369,7 +369,7 @@ MonoBehaviour:
   leftStartButton: {fileID: 1215610868}
   rightStartButton: {fileID: 1274496654}
   loadingButton: {fileID: 1281134602}
-  levelToLoad: Starting Level 3
+  levelToLoad: Main Scene 2
 --- !u!1 &786715688
 GameObject:
   m_ObjectHideFlags: 0

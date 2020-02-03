@@ -236,7 +236,7 @@ void Start()
 		if (shield) 
 		{ 
 			shield.gameObject.SetActive(true);
-			shield.ActivateShield(shieldHealth, shieldBarUI, this); 
+			shield.ActivateShield(shieldHealth, shieldBarUI, this);
 		}
 	}
 

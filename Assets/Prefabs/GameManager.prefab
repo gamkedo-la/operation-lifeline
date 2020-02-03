@@ -532,6 +532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 4027439336180754422}
   progressIndicatorUpdateInterval: 1
+  loadingScreen: {fileID: 0}
+  loadingSlider: {fileID: 0}
 --- !u!1 &4027439336180754422
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,8 +857,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.24, y: 6.13}
-  m_SizeDelta: {x: 36.48, y: 31.14}
+  m_AnchoredPosition: {x: 3.24, y: 12.39}
+  m_SizeDelta: {x: 36.48, y: 43.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &363787735039123100
 CanvasRenderer:

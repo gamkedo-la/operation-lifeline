@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6750022323431380435
 Transform:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5019c241dd6e84fa64f96271b0b89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repairStatus: 10
+  repairStatus: 90
   lifeSupportRepairLevel: {fileID: 0}
   lifeSupportLossRate: 20
 --- !u!114 &6750022323431380434
