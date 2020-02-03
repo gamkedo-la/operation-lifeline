@@ -2892,6 +2892,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6777958894775201439}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1585004581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6750022323431380445, guid: 434fef3df7572494d94d36d6e4a17592,
+    type: 3}
+  m_PrefabInstance: {fileID: 1389908935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5019c241dd6e84fa64f96271b0b89c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1590188312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4109,6 +4121,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 4268692325499737002}
+    - target: {fileID: 4825722244958484881, guid: 139285a0bbf629c4da0ad6a153332c11,
+        type: 3}
+      propertyPath: lifeSupportFailure
+      value: 
+      objectReference: {fileID: 1585004581}
     - target: {fileID: 4825722244958484892, guid: 139285a0bbf629c4da0ad6a153332c11,
         type: 3}
       propertyPath: shieldBarUI

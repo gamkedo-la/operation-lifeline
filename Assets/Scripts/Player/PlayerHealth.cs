@@ -27,9 +27,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private GameObject gameOverCanvas;
     private GameOverText gameOverScript;
     [SerializeField]
-    
-
 	private FMOD.Studio.EventInstance impactAudio;
+
+    [Header("Ship Breakdowns")]
+    public LifeSupportFailure lifeSupportFailure;
+
 
 	private void Start()
 	{
@@ -83,6 +85,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 		AdjustHealth(-damage);
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/Player/Impact"); 
 		if (health<1 && !isDead) { Die(); }
+
+        if (!isDead)
+        {
+            lifeSupportFailure.gameObject.SetActive(true);
+        }
 	}
 
 	public void TakeInvulnerableHit(int adjustment)
