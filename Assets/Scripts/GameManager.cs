@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 			loadingScreen.SetActive(true);
 		}
 
-		loadingScreen.SetActive(true);
+		//loadingScreen.SetActive(true);
 
 		if (RuntimeManager.HasBankLoaded("Master"))
         {			
