@@ -25,6 +25,11 @@ public class LifeSupportFailure : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
+    private void Awake()
+    {
+        this.gameObject.SetActive(false);
+    }
+
     private void OnEnable()
     {
         lifeSupportRepairLevel.gameObject.SetActive(true);

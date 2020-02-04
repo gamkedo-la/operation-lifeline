@@ -80,13 +80,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 	}
 
 	public void TakeDamage(int damage)
-	{
+	{       
 		if (isInvulnerable) { TakeInvulnerableHit(-damage); return; }
 		AdjustHealth(-damage);
 		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/Player/Impact"); 
 		if (health<1 && !isDead) { Die(); }
 
-        if (!isDead)
+        if (!isDead && lifeSupportFailure != null)
         {
             lifeSupportFailure.gameObject.SetActive(true);
         }
