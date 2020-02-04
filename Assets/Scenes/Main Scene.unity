@@ -2174,18 +2174,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b646e59dacacd3145b1f6d39bc348dc2, type: 3}
---- !u!114 &894347635 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9135675722363189541, guid: b4f1c62526dfea9878da573a7307dbcb,
-    type: 3}
-  m_PrefabInstance: {fileID: 2123875701}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a703bd7e0170cf142a42a740734bc339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &901489720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4913314143490122, guid: b646e59dacacd3145b1f6d39bc348dc2,
@@ -3572,66 +3560,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 894347635}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MuteAllAudio
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.19746351
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.8773585
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.18623178
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 0.9056604
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 0.055535804
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130335235674588478, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 0.055535804
       objectReference: {fileID: 0}
     - target: {fileID: 1384595284463008743, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}

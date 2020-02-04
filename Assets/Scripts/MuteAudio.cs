@@ -6,11 +6,12 @@ using FMODUnity;
 public class MuteAudio : MonoBehaviour
 {
     
-    public void MuteAllAudio(bool muteToggle)
+    public void MuteButton(bool muteToggle)
     {
         Debug.Log("mute called");
-        muteToggle = !muteToggle;
+        //muteToggle = !muteToggle;
         Debug.Log(muteToggle);
+        RuntimeManager.PauseAllEvents(muteToggle);
         RuntimeManager.MuteAllEvents(muteToggle);
     }
 }
