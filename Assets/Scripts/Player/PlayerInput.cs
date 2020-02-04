@@ -39,7 +39,7 @@ public static class PlayerInput
             || Input.GetKey(KeyCode.RightControl) // some macs do not have one?!
             || Input.GetKey(KeyCode.Return) // for symmetry w capslock
             // just for fun, the entire keyboard split in two
-            || Input.GetKey(KeyCode.Y) || Input.GetKey(KeyCode.U) || Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.O) || Input.GetKey(KeyCode.P)
+            || Input.GetKey(KeyCode.Y) || Input.GetKey(KeyCode.U) || Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.O) /*|| Input.GetKey(KeyCode.P)*/
             || Input.GetKey(KeyCode.H) || Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.K) || Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.Semicolon)
             || Input.GetKey(KeyCode.B) || Input.GetKey(KeyCode.N) || Input.GetKey(KeyCode.M) || Input.GetKey(KeyCode.Comma) || Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.Slash)
 
