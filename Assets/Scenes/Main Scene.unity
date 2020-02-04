@@ -3563,6 +3563,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3454875171651650699, guid: b4f1c62526dfea9878da573a7307dbcb,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
     - target: {fileID: 22060474260790366, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -3627,11 +3632,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.055535804
-      objectReference: {fileID: 0}
-    - target: {fileID: 3454875171651650699, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 1384595284463008743, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}
@@ -4482,6 +4482,14 @@ PrefabInstance:
       propertyPath: enhancedSpeedLabelUI
       value: 
       objectReference: {fileID: 1985270100}
+    - target: {fileID: 256893906, guid: 139285a0bbf629c4da0ad6a153332c11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908690750, guid: 139285a0bbf629c4da0ad6a153332c11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 139285a0bbf629c4da0ad6a153332c11, type: 3}
 --- !u!4 &4825722243640161783 stripped

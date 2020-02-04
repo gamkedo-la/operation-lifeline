@@ -10740,7 +10740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4825722243818142949
 Transform:
   m_ObjectHideFlags: 0
@@ -10996,6 +10996,7 @@ MonoBehaviour:
     type: 3}
   lifeLine: {fileID: 4825722243677165232}
   healthBar: {fileID: 0}
+  lifeSupportFailure: {fileID: 0}
 --- !u!114 &3067926702452503036
 MonoBehaviour:
   m_ObjectHideFlags: 0
