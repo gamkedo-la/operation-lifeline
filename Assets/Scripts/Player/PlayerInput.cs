@@ -6,7 +6,7 @@ public enum Thruster { Left, Right}
 
 public static class PlayerInput
 {
-    private static bool escPressed = false;
+    private static bool pausePressed = false;
     private static KeyCode escButton = KeyCode.Escape;
 	private static KeyCode rightThrustButton = KeyCode.RightShift;
 	private static KeyCode leftThrustButton = KeyCode.LeftControl;
@@ -17,8 +17,8 @@ public static class PlayerInput
 
 	public static void CheckInput()
 	{
-        if (Input.GetKeyDown(escButton) && !escPressed) {
-            escPressed = true;
+        if (Input.GetButtonDown("Pause") && !pausePressed) {
+            pausePressed = true;
             if (GameManager.Instance.IsPaused) {
                 GameManager.Instance.SetPause(false);
             }
@@ -26,8 +26,8 @@ public static class PlayerInput
                 GameManager.Instance.SetPause();
             }
         }
-        if (Input.GetKeyUp(escButton)) {
-            escPressed = false;
+        if (Input.GetButtonUp("Pause")) {
+            pausePressed = false;
         }
         
 		/////////////////
