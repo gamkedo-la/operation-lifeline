@@ -81,6 +81,10 @@ public class GameManager : MonoBehaviour
         homeBase = GameObject.FindWithTag("HomeBase");
         player = GameObject.FindWithTag("Player");
         totalJourneyDistanceThisLevel = GetTotalJourneyDistance();
+        if(pauseMenu != null)
+        {
+            pauseMenu.SetActive(false);
+        }
 
         if (homeBase && player) {
             StopCoroutine(playerPositionUpdate());
