@@ -3496,17 +3496,17 @@ PrefabInstance:
     - target: {fileID: 5073190072846627633, guid: 3469292f75bd24e45b0c665f4f3da695,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 960
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5073190072846627633, guid: 3469292f75bd24e45b0c665f4f3da695,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 540
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5073190072846627633, guid: 3469292f75bd24e45b0c665f4f3da695,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5073190072846627633, guid: 3469292f75bd24e45b0c665f4f3da695,
         type: 3}
@@ -3557,6 +3557,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3454875171651650699, guid: b4f1c62526dfea9878da573a7307dbcb,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
     - target: {fileID: 4557672072401563072, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3642,11 +3647,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 3454875171651650699, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
     - target: {fileID: 22060474260790366, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -3711,25 +3711,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4027439336180754422, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8919262504188545492, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 9063225036719012280, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 183315555591233793, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_Name
-      value: Resume Button
       objectReference: {fileID: 0}
     - target: {fileID: 8440864844419349270, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}
