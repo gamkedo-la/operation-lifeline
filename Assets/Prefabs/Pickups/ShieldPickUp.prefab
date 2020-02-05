@@ -85,9 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotating: 1
-  weightedToward0: 1
-  minRrotationSpeed: -0.3
-  maxRrotationSpeed: 0.3
+  weightedToward0: 0
+  minRrotationSpeed: -2
+  maxRrotationSpeed: 2
   rotationDirection: 0
 --- !u!114 &79682412202188477
 MonoBehaviour:

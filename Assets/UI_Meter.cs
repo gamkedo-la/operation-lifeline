@@ -12,7 +12,7 @@ public class UI_Meter : MonoBehaviour
 	[SerializeField] float startingTimeUntilDeath = 100f;
 	float startingDistance;
 	[SerializeField] float arrivalDistance = 2.8f;
-	float timeUntilDeath;
+	[HideInInspector] public float timeUntilDeath;
 	float currentDistance;
 	float percentETA;
 	float percentETD;
