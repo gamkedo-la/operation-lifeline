@@ -1180,6 +1180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
   progressIndicatorUpdateInterval: 3
+  loadingScreen: {fileID: 0}
+  loadingSlider: {fileID: 0}
 --- !u!4 &1216759509
 Transform:
   m_ObjectHideFlags: 0
@@ -1810,4 +1812,6 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: b7e825c61bc3252448eff27ceb29fdef, type: 2}
   - {fileID: 2100000, guid: ddeb9ca710157974980472f008e0b651, type: 2}
+  - {fileID: 2100000, guid: ecc2467a4d81fe544a2dda45717374e2, type: 2}
   materialIndex: 0
+  currentPaintJob: {fileID: 0}
