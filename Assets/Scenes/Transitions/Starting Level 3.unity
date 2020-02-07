@@ -369,7 +369,7 @@ MonoBehaviour:
   leftStartButton: {fileID: 1215610868}
   rightStartButton: {fileID: 1274496654}
   loadingButton: {fileID: 1281134602}
-  levelToLoad: Its The End Of The World As We Know It But I Feel Fine
+  levelToLoad: Main Scene 3
 --- !u!1 &786715688
 GameObject:
   m_ObjectHideFlags: 0
