@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName, mode);
             InitializeScene();
+            Debug.Log("Reloading current Scene");
         }
         else
         {
