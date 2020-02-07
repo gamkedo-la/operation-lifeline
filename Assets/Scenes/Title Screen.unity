@@ -6056,6 +6056,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413114697}
   m_CullTransparentMesh: 0
+--- !u!1001 &1472091639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5906966314366945832, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_Name
+      value: Level Music Holder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945833, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945834, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: Event
+      value: event:/Main/Background Tracks/operationLifelineTitleScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945834, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945834, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945834, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: OverrideAttenuation
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8efce18a5cc9b044da060087d4d3e8f5, type: 3}
 --- !u!1001 &1568637165
 PrefabInstance:
   m_ObjectHideFlags: 0
