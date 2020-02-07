@@ -6412,7 +6412,7 @@ MonoBehaviour:
   leftStartButton: {fileID: 221809957}
   rightStartButton: {fileID: 1574057916}
   loadingButton: {fileID: 1378285967}
-  levelToLoad: Main Scene
+  levelToLoad: Main Scene 2
 --- !u!4 &2016496280
 Transform:
   m_ObjectHideFlags: 0
