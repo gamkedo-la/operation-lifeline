@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Transitions/Starting Level 3.unity
     guid: 118cdef9e2bb6b64a9fe538a717d5469
   - enabled: 1
+    path: Assets/Scenes/Main Scene 3.unity
+    guid: 8209ad23d0f16614aaa16eb2f3a91125
+  - enabled: 1
     path: Assets/Scenes/Transitions/Its The End Of The World As We Know It But I Feel
       Fine.unity
     guid: 14f55cf28e9807d4891456261b1fcb1a
