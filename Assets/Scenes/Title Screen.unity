@@ -197,8 +197,8 @@ MonoBehaviour:
     pad tractor beam, loss condition, story transition, story writing, health pickups,
     level preparation, assorted bug fixes
 
-    Randy Tan Shaoxian: Screenshake, rock bounce, progress indicator functionality
-    and related UI, base crash fix, Esc key pause toggle
+    Randy Tan Shaoxian: GameManager, Screenshake, rock bounce, progress indicator
+    functionality and related UI, base crash fix, Esc key pause toggle
 
     Christer "McFunkypants" Kaitila - Alt key support, background stars, nebulae background,
     siren and trail effects, hospital model, background props & girders, assorted
