@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealPickUp : Collectibles, ICollectable
 {
 	private UI_Meter meters;
-	private float healthBonus = 5f; 
+	[SerializeField] private float healthBonus = 5f; 
 
 	protected override void Start()
     {

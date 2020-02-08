@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlesPrefab: {fileID: 8329365809464963534, guid: 3697e325af24d1e42a35cb23d837ab88,
     type: 3}
+  healthBonus: 10
 --- !u!58 &-8718776348027585252
 CircleCollider2D:
   m_ObjectHideFlags: 0
