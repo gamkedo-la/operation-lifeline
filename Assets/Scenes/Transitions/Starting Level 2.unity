@@ -714,8 +714,7 @@ MonoBehaviour:
 
     Note: The patient is not likely to survive a trip all the way to the hospital
     from this far out in the system, but we can supercharge our healing devices by
-    collecting exotic energy from  irradiated space rocks. Irradiated rocks glow green
-    when you shine a light on them.'
+    collecting exotic energy from  irradiated space rocks. '
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0

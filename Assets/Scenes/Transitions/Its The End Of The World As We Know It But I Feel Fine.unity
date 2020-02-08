@@ -696,8 +696,8 @@ MonoBehaviour:
   m_Text: 'The End Of the Universe.
 
 
-    There is no more content for you to explore, brave medicalnaught.  You have made
-    it to the furthest reaches beyond the light of Paradisium''s bright sun.
+    There is no more content for you to explore, brave medicalnaughts.  You have made
+    it to the furthest reaches of space beyond the light of Paradisium''s bright sun.
 
 
     Is this empty void all that remains?  Is this how your great adventure finally
@@ -706,7 +706,7 @@ MonoBehaviour:
     explore something about yourself in the process.
 
 
-    But seriously, this is the end.  There''s no more.
+    Seriously, this is the end.  There''s no more.
 
 
     You can stop playing now.
@@ -716,7 +716,7 @@ MonoBehaviour:
 
     "Live long and propsper. Or we''ll have to come and get you."
 
-    - traditional space-greeting of the Paradisium Medicalnaught Corps'
+    - traditional space-greeting of the Concordian Medicalnaught Corps'
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0
