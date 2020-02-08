@@ -695,21 +695,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Level 3\nParadisium System - The Spectrum\n\nThe Spectrum is the system's
-    largest commercial spacebase, setup at the L3 Lagrange point against a backdrop
-    of colorful nebulae. Each spectacle of ancient light is a newborn star in the
-    making.  It's a common practice for tourists to make wishes among those colored
-    nebulas, and there's a complex mythology about which colors have special meanings.
-    \ Well, it's a common practice for Humans. To the best of our knowledge, the Rylaks
-    do not have any equivilent word for the concept of 'wishes'. \n\nSpectrum shopping
-    centers and resorts have the greatest number of tourists in the entire system,
-    and that includes both Human and Rylak. A complex system of strange rituals and
-    traditions have sprung up to allow these communities to coexist and, to some extent,
-    interact and trade with each other.  Unfortunately, sometimes those interactions
-    don't always turn out well. \n\nA local Human has infected a Rylak with Nebula
-    Rubeola (space measles) that has left his whole system in shock. The Rylaks are
-    blaming us for releasing a plague on them and tensions are high. Can you get the
-    Rylak to an advanced medical facility before we have another war on our hands?"
+  m_Text: 'Level 3
+
+    Paradisium System - Nielsen Radiation Belt
+
+
+    Famously known for being the final battle before the signing of the Galactic Concords,
+    the rocky debris field around what was once Paradisium''s furthest planet is also
+    one of the most dangerous and lucrative zones along the system''s outer rim.
+
+
+    Unfortunately, the subsequent peace treaty would not be the only lasting legacy
+    of that horrific battle. The final weapon in that war left a series of micro-singularities
+    in a radiactive debris field. Over the years, these miniature black holes have
+    absorbed all the ambient space light nearby, giving the belt it''s popular nickname,
+    The Shroud Of Hidden Rocks.
+
+
+    Note: The patient is not likely to survive a trip all the way to the hospital
+    from this far out in the system, but we can supercharge our healing devices by
+    collecting exotic energy from  irradiated space rocks. '
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0

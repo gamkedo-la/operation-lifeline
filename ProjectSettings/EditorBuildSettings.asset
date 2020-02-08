@@ -25,16 +25,16 @@ EditorBuildSettings:
     guid: 520d9ad17e37c984487d7bacfe1b48f1
   - enabled: 1
     path: Assets/Scenes/Transitions/Starting Level 2.unity
-    guid: bee4f4d133597bb4a9ecf6a5791cf33c
-  - enabled: 1
-    path: Assets/Scenes/Main Scene 2.unity
-    guid: f5182f717a13852479dc12468b9253f6
-  - enabled: 1
-    path: Assets/Scenes/Transitions/Starting Level 3.unity
     guid: 118cdef9e2bb6b64a9fe538a717d5469
   - enabled: 1
-    path: Assets/Scenes/Main Scene 3.unity
+    path: Assets/Scenes/Main Scene 2.unity
     guid: 8209ad23d0f16614aaa16eb2f3a91125
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Starting Level 3.unity
+    guid: bee4f4d133597bb4a9ecf6a5791cf33c
+  - enabled: 1
+    path: Assets/Scenes/Main Scene 3.unity
+    guid: f5182f717a13852479dc12468b9253f6
   - enabled: 1
     path: Assets/Scenes/Transitions/Its The End Of The World As We Know It But I Feel
       Fine.unity
