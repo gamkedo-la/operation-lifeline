@@ -369,7 +369,7 @@ MonoBehaviour:
   leftStartButton: {fileID: 1215610868}
   rightStartButton: {fileID: 1274496654}
   loadingButton: {fileID: 1281134602}
-  levelToLoad: Main Scene 1
+  levelToLoad: Main Scene 0
 --- !u!1 &786715688
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,12 +695,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Level 1\nParadisium System - Concordian Belt. \n\nAsteorid mining is a
-    dangerous profession. The miners of Paradisium put their lives in the hands of
-    heroic astrolance pilots that brave flights through the Belt every day.  As a
-    medtech team, you and your partner must work together to get a critically injured
-    patient to the hospital before they perish. \n\nCoordinate your efforts and work
-    together to navigate the Belt.\n\nGood luck. We're all counting on you. \n"
+  m_Text: "Operation Lifeline is a two-player co-op game, where players work together
+    to pilot a single spaceship.  On your way to the Concord Medical Center, take
+    a moment to get familiar with navigating your astrolance. \n\nEach player uses
+    only one button. Player 1 can use any button on the left side of the keyboard
+    while Player 2 can use any key on the right. Holding a left-side button turns
+    the ship to the left. Holding a right-side button will turn to the right. When
+    both players hold their button down, both thrusters will fire, giving the astrolance
+    a burst of speed. \n\nBoth players should choose their button now.  The game will
+    start when each player has pressed a button."
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -12,10 +12,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Ship Customization.unity
     guid: 90afcd7d831a1c04396122cda97da9c4
   - enabled: 1
+    path: Assets/Scenes/Transitions/Starting Level 0.unity
+    guid: 78c5f40cc381b0949b71c0c33b98a14b
+  - enabled: 1
+    path: Assets/Scenes/Main Scene 0.unity
+    guid: 7ef3d9aa7e6acc74aa784f8a93bccde4
+  - enabled: 1
     path: Assets/Scenes/Transitions/Starting Level 1.unity
     guid: 184b216ff9f79434794cdfb8dd2bb062
   - enabled: 1
-    path: Assets/Scenes/Main Scene.unity
+    path: Assets/Scenes/Main Scene 1.unity
     guid: 520d9ad17e37c984487d7bacfe1b48f1
   - enabled: 1
     path: Assets/Scenes/Transitions/Starting Level 2.unity
