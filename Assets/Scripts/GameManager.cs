@@ -78,19 +78,30 @@ public class GameManager : MonoBehaviour
     }
 
     private void InitializeScene() {
-		if (loadingScreen) { loadingScreen.SetActive(false); }
-        homeBase = GameObject.FindWithTag("HomeBase");
-        player = GameObject.FindWithTag("Player");
-        totalJourneyDistanceThisLevel = GetTotalJourneyDistance();
-        if(pauseMenu != null)
+        if (loadingScreen) { loadingScreen.SetActive(true); }
+
+        if (RuntimeManager.HasBankLoaded("Master"))//Check that FMOD Master Bank has loaded before Initializing Scene
         {
-            pauseMenu.SetActive(false);
+            if (loadingScreen) { loadingScreen.SetActive(false); }
+            homeBase = GameObject.FindWithTag("HomeBase");
+            player = GameObject.FindWithTag("Player");
+            totalJourneyDistanceThisLevel = GetTotalJourneyDistance();
+            if (pauseMenu != null)
+            {
+                pauseMenu.SetActive(false);
+            }
+
+            if (homeBase && player)
+            {
+                StopCoroutine(playerPositionUpdate());
+                StartCoroutine(playerPositionUpdate());
+            }
+        }
+        else
+        {
+            InitializeScene(); //If FMOD isn't loaded Initialize again. 
         }
 
-        if (homeBase && player) {
-            StopCoroutine(playerPositionUpdate());
-            StartCoroutine(playerPositionUpdate());
-        }
     }
 
     private IEnumerator MoveToScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
