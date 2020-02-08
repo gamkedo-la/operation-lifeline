@@ -39,4 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Transitions/Its The End Of The World As We Know It But I Feel
       Fine.unity
     guid: 14f55cf28e9807d4891456261b1fcb1a
+  - enabled: 1
+    path: Assets/Scenes/work in progress scenes/Devs Just Wanna Have Fun.unity
+    guid: 2ff2c0b883c3924489657b0664082773
   m_configObjects: {}
