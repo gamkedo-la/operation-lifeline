@@ -369,7 +369,7 @@ MonoBehaviour:
   leftStartButton: {fileID: 1215610868}
   rightStartButton: {fileID: 1274496654}
   loadingButton: {fileID: 1281134602}
-  levelToLoad: Main Scene 3
+  levelToLoad: Main Scene 4
 --- !u!1 &786715688
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Level 3\nParadisium System - some place. \n\nPlaceholder text."
+  m_Text: "Level 4\nParadisium System - some place. \n\nPlaceholder text"
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0

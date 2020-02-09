@@ -369,7 +369,7 @@ MonoBehaviour:
   leftStartButton: {fileID: 1215610868}
   rightStartButton: {fileID: 1274496654}
   loadingButton: {fileID: 1281134602}
-  levelToLoad: Main Scene 3
+  levelToLoad: Main Scene 5
 --- !u!1 &786715688
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +695,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Level 3\nParadisium System - some place. \n\nPlaceholder text."
+  m_Text: 'Level 5
+
+    Paradisium System - Nielsen Radiation Belt
+
+
+    Famously known for being the final battle before the signing of the Galactic Concords,
+    the rocky debris field around what was once Paradisium''s furthest planet is also
+    one of the most dangerous and lucrative zones along the system''s outer rim.
+
+
+    Unfortunately, the subsequent peace treaty would not be the only lasting legacy
+    of that horrific battle. The final weapon in that war left a series of micro-singularities
+    and a radiactive debris field. Over time, these miniature black holes have absorbed
+    all the ambient space light nearby, giving the belt it''s popular nickname, The
+    Shroud Of Hidden Rocks.
+
+
+    Your patient is in critical condition. To reach the hospital from this far out
+    in the system you will need to supercharge your healing devices by collecting
+    exotic energy around irradiated space-rocks. '
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0
