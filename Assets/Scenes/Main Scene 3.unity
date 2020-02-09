@@ -7639,11 +7639,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4268692325080187436, guid: c09ad1d230a05a04cac58def43c6e585,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -166.40002
-      objectReference: {fileID: 0}
     - target: {fileID: 4268692325772813012, guid: c09ad1d230a05a04cac58def43c6e585,
         type: 3}
       propertyPath: m_Camera

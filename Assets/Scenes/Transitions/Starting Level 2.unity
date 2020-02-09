@@ -696,19 +696,15 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Level 2\nParadisium System - The Spectrum\n\nThe Spectrum is the system's
-    largest commercial spacebase, setup at the L3 Lagrange point against a backdrop
-    of colorful nebulae. It's a common practice for visitors to make wishes among
-    those colored nebulas, and there's a complex mythology about which colors have
-    special meanings.  The practice is common for Humans but to the best of our knowledge,
-    the Rylaks do not have any equivilent word for the concept of 'wishes'. \n\nSpectrum
-    shopping centers and resorts have the greatest number of tourists in the entire
-    system, and that includes both Human and Rylak. A complex system of strange rituals
-    and traditions have sprung up to allow these communities to coexist and, to some
-    extent, interact and trade with each other.  Unfortunately, sometimes those interactions
-    don't turn out well. \n\nA visiting Rylak is dying from exposure to Nebula Rubeola
-    (space measles). The Rylaks are blaming Humans for releasing a plague on them
-    and tensions are high. Can you get the sick Rylak to an advanced medical facility
-    before open conflict breaks out?"
+    largest commercial spacebase, set against a backdrop of colorful nebulae. These
+    shopping centers and resorts have the more tourists than any in the entire system,
+    including both Human and Rylak. A complex system of strange rituals and traditions
+    have sprung up that allow these communities to coexist and, to some extent, interact
+    and trade.  Unfortunately, sometimes those interactions don't turn out well. \n\nA
+    visiting Rylak is dying from exposure to Nebula Rubeola (space measles). The Rylaks
+    are blaming Humans for releasing a plague on them. Tensions are high. Can you
+    get the sick Rylak to an advanced medical facility before open conflict breaks
+    out?"
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0

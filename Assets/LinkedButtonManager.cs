@@ -61,7 +61,7 @@ public class LinkedButtonManager : MonoBehaviour
 
 	void StartLevel()
 	{
-		GameManager.Instance.uiSoundOnClick();
+		
 		if (loadingButton && loadingButton.gameObject.activeSelf==true) 
 		{
 			loadingButton.enabled = true;
@@ -69,5 +69,6 @@ public class LinkedButtonManager : MonoBehaviour
 			if (text) { text.text = "Loading..."; }
 		}
 		GameManager.Instance.LoadScene(levelToLoad);
-	}
+        GameManager.Instance.uiSoundOnClick();
+    }
 }

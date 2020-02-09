@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject loadingScreen;
     [SerializeField] private Slider loadingSlider;
 
+    private FMOD.Studio.EventInstance instance;
+
     public void SetPause(bool toPause = true) {
         isPaused = toPause;
 		pauseMenu.SetActive(toPause);
@@ -123,7 +125,10 @@ public class GameManager : MonoBehaviour
             {
 				float progress = Mathf.Clamp01(operation.progress);	
                 Debug.Log(progress + " :  Actual progress: " + operation.progress * 100 + "%");
-                loadingSlider.value = progress;
+                if (loadingScreen)
+                {
+                    loadingSlider.value = progress;
+                }
                 yield return null;
             }			
 			//SceneManager.UnloadSceneAsync(oldScene);
@@ -165,8 +170,11 @@ public class GameManager : MonoBehaviour
 
 	public void uiSoundOnClick() 
 	{
-		FMODUnity.RuntimeManager.PlayOneShot("event:/Main/UI/Menu Selection");
-	}
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Main/UI/Menu Selection");
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Main/UI/Menu Selection");
+        instance.start();
+        instance.release();
+    }
 
 	
 }
