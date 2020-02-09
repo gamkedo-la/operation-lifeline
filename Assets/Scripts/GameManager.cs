@@ -125,7 +125,10 @@ public class GameManager : MonoBehaviour
             {
 				float progress = Mathf.Clamp01(operation.progress);	
                 Debug.Log(progress + " :  Actual progress: " + operation.progress * 100 + "%");
-                loadingSlider.value = progress;
+                if (loadingScreen)
+                {
+                    loadingSlider.value = progress;
+                }
                 yield return null;
             }			
 			//SceneManager.UnloadSceneAsync(oldScene);
