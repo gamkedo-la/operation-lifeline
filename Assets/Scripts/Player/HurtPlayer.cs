@@ -15,13 +15,11 @@ public class HurtPlayer : MonoBehaviour
 
 	private CameraController cameraController;
     private GameObject player;
-    private PlayerShake playerShakeScript;	
 
     private void Awake()
     {
 		cameraController = Camera.main.GetComponent<CameraController>();
         player = GameObject.Find("Player");
-        playerShakeScript = player.GetComponent<PlayerShake>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -59,10 +57,8 @@ public class HurtPlayer : MonoBehaviour
 
 		if (health != null && 
 			health.GetInvulnerability() == false &&
-			playerShakeScript != null &&
 			health.GetMaterialType() == MaterialType.Metal )
 		{
-			playerShakeScript.ShakeMe();
 			if (cameraController) { cameraController.Shake(hurtShakeDuration, hurtShakeAmount); }
 		}
 				
