@@ -22,7 +22,9 @@ public class LinkedButtonManager : MonoBehaviour
 		blueColor = new Color(10f/255f, 162f/255f, 245f/255f, 255f/255f);
 		greenColor = new Color(0f/255f, 236f/255f, 18f/255f, 255f/255f);
 		leftStartButton.color = blueColor;
-		rightStartButton.color = blueColor;
+		rightStartButton.color = blueColor; 
+
+
 	}
 
 	void Update()
@@ -76,6 +78,8 @@ public class LinkedButtonManager : MonoBehaviour
     private IEnumerator WaitForSoundEffectToFinish()
     {
         yield return new WaitForSeconds(1.2f);// Hacky fix to wait until the sound effect is done playing before loading next level. 
+        FMODUnity.RuntimeManager.PauseAllEvents(true);
+        FMODUnity.RuntimeManager.MuteAllEvents(true);
         GameManager.Instance.LoadScene(levelToLoad);
     }
 }
