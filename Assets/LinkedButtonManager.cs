@@ -65,17 +65,17 @@ public class LinkedButtonManager : MonoBehaviour
 		if (loadingButton && loadingButton.gameObject.activeSelf==true) 
 		{
 			loadingButton.enabled = true;
-			TextMeshProUGUI text = loadingButton.GetComponentInChildren<TextMeshProUGUI>();
-			if (text) { text.text = "Loading..."; }
+			TextMeshProUGUI loadingText = loadingButton.GetComponentInChildren<TextMeshProUGUI>();
+			if (loadingText) { loadingText.text = "Loading..."; }
 		}
         GameManager.Instance.uiSoundOnClick();
-        StartCoroutine(WaitForSoundEffectToFinish());
-        GameManager.Instance.LoadScene(levelToLoad);
+        StartCoroutine(WaitForSoundEffectToFinish());        
         
     }
 
     private IEnumerator WaitForSoundEffectToFinish()
     {
         yield return new WaitForSeconds(1.2f);// Hacky fix to wait until the sound effect is done playing before loading next level. 
+        GameManager.Instance.LoadScene(levelToLoad);
     }
 }
