@@ -560,7 +560,7 @@ PrefabInstance:
     - target: {fileID: 7399015757558097391, guid: 8e4b8347c6f4a7a42a4a9f01030498da,
         type: 3}
       propertyPath: levelToLoad
-      value: Main Scene 1
+      value: Meteor shower 01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4b8347c6f4a7a42a4a9f01030498da, type: 3}
@@ -14772,6 +14772,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8211871989550203465, guid: b4f1c62526dfea9878da573a7307dbcb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858393570, guid: b4f1c62526dfea9878da573a7307dbcb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -37.80005
+      objectReference: {fileID: 0}
     - target: {fileID: 1950306601, guid: b4f1c62526dfea9878da573a7307dbcb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -14899,15 +14908,6 @@ PrefabInstance:
     - target: {fileID: 9063225036719012280, guid: b4f1c62526dfea9878da573a7307dbcb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1858393570, guid: b4f1c62526dfea9878da573a7307dbcb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -37.80005
-      objectReference: {fileID: 0}
-    - target: {fileID: 8211871989550203465, guid: b4f1c62526dfea9878da573a7307dbcb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15255,11 +15255,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268692325080187436, guid: c09ad1d230a05a04cac58def43c6e585,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -166.40002
       objectReference: {fileID: 0}
     - target: {fileID: 4268692325772813012, guid: c09ad1d230a05a04cac58def43c6e585,
         type: 3}
