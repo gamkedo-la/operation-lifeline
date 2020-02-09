@@ -319,7 +319,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-48264
+  m_Name: pb_Mesh-250050
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1321,12 +1321,12 @@ PrefabInstance:
     - target: {fileID: 245440662283675645, guid: 7097e4991d9ff8e4fa077583b1df931b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -238
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 245440662283675645, guid: 7097e4991d9ff8e4fa077583b1df931b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 216
+      value: 828
       objectReference: {fileID: 0}
     - target: {fileID: 245440662283675645, guid: 7097e4991d9ff8e4fa077583b1df931b,
         type: 3}
@@ -3407,7 +3407,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-48260
+  m_Name: pb_Mesh-250046
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5692,6 +5692,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945834, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: Event
+      value: event:/Main/Background Tracks/Race of Life
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945834, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906966314366945834, guid: 8efce18a5cc9b044da060087d4d3e8f5,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8efce18a5cc9b044da060087d4d3e8f5, type: 3}
 --- !u!1001 &1590188312
@@ -6536,7 +6551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904013454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1064026240}
@@ -8191,11 +8206,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 12214
-      objectReference: {fileID: 0}
-    - target: {fileID: 6777958894986725201, guid: 81b91e13e5565274fa885686eb7ca3ac,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -191.32101
       objectReference: {fileID: 0}
     - target: {fileID: 6777958894986725201, guid: 81b91e13e5565274fa885686eb7ca3ac,
         type: 3}

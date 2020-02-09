@@ -195,7 +195,7 @@ MonoBehaviour:
     Anthony Juarez - Light and scale tweaks, health indicator, camera zoom feature,
     thrust flicker, refactoring, jitter fix, progress meter, physics tuning, landing
     pad tractor beam, loss condition, story transition, story writing, health pickups,
-    level preparation, assorted bug fixes
+    level preparation, assorted bug fixes, level 2 and 3 design
 
     Randy Tan Shaoxian: GameManager, Screenshake, rock bounce, progress indicator
     functionality and related UI, base crash fix, Esc key pause toggle
@@ -215,7 +215,7 @@ MonoBehaviour:
 
     Alan Zaring - Title screen music
 
-    Marcel van Dijk - Astrolance model and texture
+    Marcel van Dijk - Astrolance model and texture, level 3 and 4 design.
 
     Brian J. Boucher - Thruster particle effects
 
