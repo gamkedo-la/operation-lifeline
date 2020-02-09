@@ -695,7 +695,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Level 3\nParadisium System - some place. \n\nPlaceholder text."
+  m_Text: "Level 3\nParadisium System - The Amber Zone periphery. \n\nWe've detected
+    some distress signals from the Amber Zone, a belt of hard rocks whose orbit was
+    shifted when a terrible experimental weapon tore a hole in space/time on the last
+    day of the Five Worlds War. No one is supposed to go near the Amber Zone, but
+    occasionally there are some punk kids who want to prove their bravery or foolish
+    belters who think they can play the odds in hopes of scoring some of the rare
+    alloys transmogrified by the exotic energies of the Neilsen Wave. \n\nWe've detected
+    a stream of weak radio signals that we believe are distress calls from small damaged
+    ships.  We are deploying a squadron of astrolances to search for survivors and
+    bring them to our medical outpost on the outer edges of the Zone.  I'm sure the
+    Concord barristers will have questions for them."
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0

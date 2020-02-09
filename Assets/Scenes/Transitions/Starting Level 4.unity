@@ -695,7 +695,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Level 4\nParadisium System - some place. \n\nPlaceholder text"
+  m_Text: "Level 4\nParadisium System - The Amber Zone. \n\nSix years ago, five races
+    from different worlds ended a terrible war and founded the Galactic Concord, an
+    unprescedented allience came came together for the purpose of finding the most
+    notorious man in the Universe.  While he hasn't been seen in six years, the influence
+    of the Concord has spread and brought peace to the known Galaxy.  \n\nBut they
+    never forgot their true mission.  A small group of Concordian rangers have braved
+    the Amber Zone to investigate a rumors. While, the Amber Zone's a dangerous place
+    and for once it's the Concord rangers that need rescuing. When you bring them
+    in, try to remember, these aren't just everyday fools braving the Zone. They are
+    heroes of Paradisium. Like yourselves. "
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0
