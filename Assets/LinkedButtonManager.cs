@@ -80,6 +80,7 @@ public class LinkedButtonManager : MonoBehaviour
         yield return new WaitForSeconds(1.2f);// Hacky fix to wait until the sound effect is done playing before loading next level. 
         FMODUnity.RuntimeManager.PauseAllEvents(true);
         FMODUnity.RuntimeManager.MuteAllEvents(true);
+        yield return new WaitForSeconds(0.5f);
         GameManager.Instance.LoadScene(levelToLoad);
     }
 }
