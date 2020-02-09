@@ -693,30 +693,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The End Of the Universe.
-
-
-    There is no more content for you to explore, brave medicalnaughts.  You have made
-    it to the furthest reaches of space beyond the light of Paradisium''s bright sun.
-
-
-    Is this empty void all that remains?  Is this how your great adventure finally
-    ends?  We hope not.  Now it is time you to make your own adventure - to set forth
-    not just to seek out distant worlds, but to craft them.  And in so doing, maybe
-    explore something about yourself in the process.
-
-
-    Seriously, this is the end.  There''s no more.
-
-
-    You can stop playing now.
-
-
-
-
-    "Live long and propsper. Or we''ll have to come and get you."
-
-    - traditional space-greeting of the Concordian Medicalnaught Corps'
+  m_Text: "The End Of the Universe.\n\nThere is no more content for you to explore,
+    brave medicalnaughts.  You have made it to the furthest reaches of space beyond
+    the light of Paradisium's bright sun.  Is this empty void all that remains?  Is
+    this how your great adventure finally ends?  \n\nWe hope not.  Now it is time
+    you to make your own adventure - to set forth not just to seek out distant worlds,
+    but to craft them.  And in so doing, maybe explore something about yourself in
+    the process. Whether it's writing, art, music, programming, or anything else,
+    we urge you to find your passion and use it to create something for others to
+    enjoy.  \n\n\"Live long and propsper. Or we'll have to come and get you.\"\n-
+    traditional space-greeting of the Concordian Medicalnaught Corps"
 --- !u!222 &1018080436
 CanvasRenderer:
   m_ObjectHideFlags: 0
