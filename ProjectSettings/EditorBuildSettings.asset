@@ -34,9 +34,21 @@ EditorBuildSettings:
     guid: 8209ad23d0f16614aaa16eb2f3a91125
   - enabled: 1
     path: Assets/Scenes/Transitions/Starting Level 3.unity
-    guid: bee4f4d133597bb4a9ecf6a5791cf33c
+    guid: d47b75e8e32cd984680196554672742f
   - enabled: 1
     path: Assets/Scenes/Main Scene 3.unity
+    guid: 9cb5afdd66f8bcc4a830a1390958cae2
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Starting Level 4.unity
+    guid: 4499bca0dbec3d14682312a8ced28454
+  - enabled: 1
+    path: Assets/Scenes/Main Scene 4.unity
+    guid: 4437f9d1d351a984996f47ebdbbfb03a
+  - enabled: 1
+    path: Assets/Scenes/Transitions/Starting Level 5.unity
+    guid: bee4f4d133597bb4a9ecf6a5791cf33c
+  - enabled: 1
+    path: Assets/Scenes/Main Scene 5.unity
     guid: f5182f717a13852479dc12468b9253f6
   - enabled: 1
     path: Assets/Scenes/Transitions/Its The End Of The World As We Know It But I Feel
@@ -45,7 +57,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/work in progress scenes/Devs Just Wanna Have Fun.unity
     guid: 2ff2c0b883c3924489657b0664082773
-  - enabled: 1
-    path: Assets/Scenes/Meteor shower 01.unity
-    guid: 9cb5afdd66f8bcc4a830a1390958cae2
   m_configObjects: {}
